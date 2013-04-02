@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Quadratic equation</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var D, x1, x2, noroots;
+        var a = parseFloat(prompt("a = ?"));
+        var b = parseFloat(prompt("b = ?"));
+        var c = parseFloat(prompt("c = ?"));
+
+        D = b * b - 4 * a * c;
+
+        if (D < 0 || (a == 0 && b == 0 && c != 0))
+        {
+            jsConsole.writeLine("No roots.");
+            noroots = true;
+        }
+        else
+        {
+            if (D > 0)
+            {
+                if (a != 0)
+                {
+                    x1 = (b * -1 + Math.sqrt(D)) / (2 * a);
+                    x2 = (b * -1 - Math.sqrt(D)) / (2 * a);
+                }
+                else
+                {
+                    x1 = x2 = (c * -1) / b;
+                }
+            }
+
+            if (D == 0)
+            {
+                if (a == 0 && b == 0 && c == 0)
+                {
+                    jsConsole.writeLine("Every x is a root");
+                    noroots = true;
+                }
+                else x1 = x2 = -b / (2 * a);
+            }
+        }
+
+        if (!noroots) jsConsole.writeLine("x1 = " + x1 + " x2 = " + x2);
+    </script>
+</body>
+</html>

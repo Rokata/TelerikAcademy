@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Exchanging values</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var a = parseInt(prompt("a = ?"));
+        var b = parseInt(prompt("b = ?"));
+
+        if (a > b) {
+            var temp = a;
+            a = b;
+            b = temp;
+            jsConsole.writeLine("Values now: a = " + a + ", b = " + b);
+        }
+        else {
+            jsConsole.writeLine("No change in values.");
+        }
+    </script>
+</body>
+</html>

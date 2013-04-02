@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Has property</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function hasProperty(obj, prop) {
+            return obj.hasOwnProperty(prop);
+        }
+
+        var obj = new Number(15);
+        var str = "some string";
+        var bool = new Boolean(false);
+
+        jsConsole.writeLine(hasProperty(obj, "length"));
+        jsConsole.writeLine(hasProperty(str, "length"));
+        jsConsole.writeLine(hasProperty(bool, "length"));
+        
+    </script>
+</body>
+</html>

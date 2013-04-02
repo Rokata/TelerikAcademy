@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Maximal sequence</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var numbers = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+        var currentSequenceCount = 1;
+        var maxSequenceCount = 1;
+        var maxSequentialNumber = numbers[0];
+
+        for (var i = 1; i < numbers.length; i++)
+        {
+            if (numbers[i] == numbers[i - 1]) currentSequenceCount++;
+            else
+            {
+                if (currentSequenceCount > maxSequenceCount)
+                {
+                    maxSequenceCount = currentSequenceCount;
+                    maxSequentialNumber = numbers[i - 1];
+                }
+                currentSequenceCount = 1;                    
+            }
+        }
+
+        jsConsole.write("Max sequence: {");
+        for (var i = 0; i < maxSequenceCount; i++)
+        {
+            if (i == maxSequenceCount - 1) jsConsole.write(maxSequentialNumber + "}\n");
+            else jsConsole.write(maxSequentialNumber + ", ");
+        }
+    </script>
+</body>
+</html>
+
+

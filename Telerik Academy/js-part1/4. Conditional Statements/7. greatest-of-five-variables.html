@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Greatest of five vars</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var a = 84, b = 12, c = 155, d = 19, e = 26;
+
+        if (a > b && a > c && a > d && a > e)
+            jsConsole.writeLine("The greatest is a=" + a);
+        else if (b > a && b > c && b > d && b > e)
+            jsConsole.writeLine("The greatest is b=" + b);
+        else if (c > a && c > b && c > d && c > e)
+            jsConsole.writeLine("The greatest is c=" + c);
+        else if (d > a && d > b && d > c && d > e)
+            jsConsole.writeLine("The greatest is d=" + d);
+        else
+            jsConsole.writeLine("The greatest is e=" + e);
+
+    </script>
+</body>
+</html>

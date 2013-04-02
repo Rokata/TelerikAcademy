@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 1 Provadia Numbers", "Problem 1 Provadia Numbers\Problem 1 Provadia Numbers.csproj", "{463EE845-6802-473D-A014-7982EE84D23E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 2 Midget", "Problem 2 Midget\Problem 2 Midget.csproj", "{EBFD3012-23AD-4940-AC3C-BEC4AA59523F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 5 Two in One", "Problem 5 Two in One\Problem 5 Two in One.csproj", "{6E44A71B-7386-43CF-9C2C-B98E5C14BA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{463EE845-6802-473D-A014-7982EE84D23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463EE845-6802-473D-A014-7982EE84D23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463EE845-6802-473D-A014-7982EE84D23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463EE845-6802-473D-A014-7982EE84D23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFD3012-23AD-4940-AC3C-BEC4AA59523F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFD3012-23AD-4940-AC3C-BEC4AA59523F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFD3012-23AD-4940-AC3C-BEC4AA59523F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFD3012-23AD-4940-AC3C-BEC4AA59523F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E44A71B-7386-43CF-9C2C-B98E5C14BA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E44A71B-7386-43CF-9C2C-B98E5C14BA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E44A71B-7386-43CF-9C2C-B98E5C14BA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E44A71B-7386-43CF-9C2C-B98E5C14BA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

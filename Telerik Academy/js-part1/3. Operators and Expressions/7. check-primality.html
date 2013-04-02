@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check if prime</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var n = parseInt(prompt("Enter n"));
+
+        var isPrime = ((n != 2) && (n != 3) && (n != 5) && (n != 7)) && ((n % 2 == 0) || (n % 3 == 0) || (n % 5 == 0) ||
+            (n % 7 == 0));
+
+        jsConsole.writeLine(n + " is prime: " + !isPrime);
+    </script>
+</body>
+</html>

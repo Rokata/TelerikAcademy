@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Point in circle</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var center_x = 0;
+        var center_y = 0;
+        var rad = 5;
+
+        var point_x = prompt("Enter x of the point");
+        var point_y = prompt("Enter y of the point");
+
+        if (Math.pow(point_x - center_x, 2) + Math.pow(point_y - center_y, 2) < rad * rad) {
+            jsConsole.writeLine("Point is within circle.");
+        }
+        else {
+            jsConsole.writeLine("Point outside circle.");
+        }
+    </script>
+</body>
+</html>

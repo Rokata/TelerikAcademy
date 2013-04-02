@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Smallest/biggest lexicographically</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function checkPropertiesLength(element) {
+            var smallestProperty = "z", biggestProperty = "a";
+
+            for (var prop in element) {
+                if (prop > biggestProperty) {
+                    biggestProperty = prop;
+                }
+                else if (prop < smallestProperty) {
+                    smallestProperty = prop;
+                }
+            }
+
+            return { smallest: smallestProperty, biggest: biggestProperty};
+        }
+		
+		var result = checkPropertiesLength(document);
+
+        jsConsole.writeLine("Smallest prop in document: " + result.smallest);
+        jsConsole.writeLine("Biggest prop in document: " + result.biggest);
+		
+		result = checkPropertiesLength(window);
+
+        jsConsole.writeLine("Smallest in window: " + result.smallest);
+        jsConsole.writeLine("Biggest in window: " + result.biggest);
+		
+		result = checkPropertiesLength(navigator);
+
+        jsConsole.writeLine("Smallest in navigator: " + result.smallest);
+        jsConsole.writeLine("Biggest in navigator: " + result.biggest);
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+﻿body {
+	font: 12px "Segoe UI";
+}
+
+/* MAIN WINDOW */
+.calculator {
+	border-radius: 5px;
+	background-color: #B7CFE8;
+	padding: 0 6px 6px 6px;
+	display: inline-block;
+	border: 1px solid black;
+}
+
+/* ELEMENETS */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	vertical-align: central;
+	color: #1E395B;
+
+	background: -webkit-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+	background: -moz-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+	background: -o-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+	background: -ms-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+	background: linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#F0F6FB', EndColorStr='#D5E0ED'); /* IE6,IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#F0F6FB', EndColorStr='#D5E0ED')"; /* IE8 */
+    border-radius: 3px;
+	border: 1px solid #8696AA;
+}
+
+/* CLASSES */
+.calculator #content-area .inline-block {
+	display: inline-block;
+}
+
+.smallButton {
+	width: 35px;
+	height: 28px;
+}
+
+.numberedButton {
+	background: -webkit-linear-gradient(#FE5F9FD, #F1FAFE);
+	background: -moz-linear-gradient(#FE5F9FD, #F1FAFE);
+	background: -o-linear-gradient(#FE5F9FD, #F1FAFE);
+	background: -ms-linear-gradient(#FE5F9FD, #F1FAFE);
+	background: linear-gradient(#FE5F9FD, #F1FAFE);
+}
+
+.active-button {
+	font: 15px "Segoe UI";
+}
+
+.wideButton {
+	width: 75px;
+	height: 28px;
+}
+
+.equalButton {
+	height: 60px;
+	width: 35px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.active-button:hover {
+	background: -webkit-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+	background: -moz-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+	background: -o-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+	background: -ms-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+	background: linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FCE3C6', EndColorStr='#FCF8CA'); /* IE6,IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FCE3C6', EndColorStr='#FCF8CA')"; /* IE8 */
+	border: 1px solid #FFDB00;
+}
+
+.inactive-button {
+	background: #D9E4F1;
+	font: 15px "Segoe UI";
+}
+
+.smallerFont {
+	font: 12px "Segoe UI";
+}
+
+.smallButton.active-button {
+	background-color: -webkit-linear-gradient(#EDF3F9 0%, #D6E1EE 50%);
+}
+
+.clear {
+	clear: both;
+	content: "";
+}
+
+.calculator-font {
+	font: 20px Consolas;
+}
+
+.left-float {
+	float: left;
+}
+
+.black-border {
+	border: 1px solid black;
+}
+
+.outlined {
+	border: 1px solid #8696AA;
+	border-radius: 4px;
+}
+
+.grayed {
+	color: #A17C66;
+}
+
+.highlight {
+	color: #1E395B;
+}
+
+.outlined.calculator-font td {
+	padding: 0 6px 0 6px;
+}
+
+.outlined.calculator-font tr {
+	padding-bottom: 0;
+}
+
+/* STRUCURAL ELEMENTS IDS */
+#icon-area {
+	margin-right: 5px;
+}
+
+#window-buttons {
+	float: right;
+	padding: 0;
+}
+
+#window-heading {
+	margin: 5px 5px 3px 0;
+}
+
+#text-menu {
+	background: -webkit-linear-gradient(white 0% , #DEE3F3 35%);
+	background: -moz-linear-gradient(white 0% , #DEE3F3 35%);
+	background: -o-linear-gradient(white 0% , #DEE3F3 35%);
+	background: -ms-linear-gradient(white 0% , #DEE3F3 35%);
+	background: linear-gradient(white 0% , #DEE3F3 35%);
+	border-bottom: 1px solid #B6BCCC;
+}
+
+#text-menu td {
+	padding: 1px 6px 0 6px;
+}
+
+#text-menu td::first-letter {
+	text-decoration: underline;
+}
+
+#text-menu td:hover {
+	border: 1px solid #B6BCCC;
+	border-radius: 5px;
+	cursor: default;
+}
+
+#buttons-fields {
+	padding: 10px;
+	background: -webkit-linear-gradient(#ECF3FC 0%, #D9E4F1 50%);
+	background: -moz-linear-gradient(#ECF3FC 0%, #D9E4F1 50%);
+	background: -o-linear-gradient(#ECF3FC 0%, #D9E4F1 50%);
+	background: -ms-linear-gradient(#ECF3FC 0%, #D9E4F1 50%);
+	background: linear-gradient(#ECF3FC 0%, #D9E4F1 50%);
+
+}
+
+#calculator-input {
+	height: 40px;
+	width: 100%;
+	border: 1px solid #B6BCCC;
+	border-radius: 3px;
+	text-align: right;
+	padding: 8px 0 2px 0;
+	background: -webkit-linear-gradient(#E5EEFB 0% , white 85%);
+	background: -moz-linear-gradient(#E5EEFB 0% , white 85%);
+	background: -o-linear-gradient(#E5EEFB 0% , white 85%);
+	background: -ms-linear-gradient(#E5EEFB 0% , white 85%);
+	background: linear-gradient(#E5EEFB 0% , white 85%);
+	margin-bottom: 5px;
+}
+
+.calculator #buttons-fields #binary-stuff {
+	font-size: 13px;
+	margin-bottom: 4px;
+    border-radius: 3px;
+}
+
+.calculator #buttons-fields #binary-stuff table tr td:last-child {
+	text-align: right;
+}
+
+#buttons table tr:first-child .smallButton.smallerFont.inactive-button:hover {
+	background: -webkit-linear-gradient(#FFD974 0% , white 100%);
+	background: -moz-linear-gradient(#FFD974 0% , white 100%);
+	background: -o-linear-gradient(#FFD974 0% , white 100%);
+	background: -ms-linear-gradient(#FFD974 0% , white 100%);
+	background: linear-gradient(#FFD974 0% , white 100%);
+	border: 1px solid #FFDB00;
+}
+
+.calculator #buttons-fields #radio-buttons {
+	padding: 4px;
+}
+
+.calculator #buttons-fields #radio-buttons div {
+	border: 1px solid #8696AA;
+	padding-right: 10px;
+	width: 60px;
+	height: 90px;
+	margin-bottom: 4px;
+	border-radius: 3px;
+}

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma;
+}
+
+#wrapper {
+    margin-left: 45px;
+    width: 450px;
+}
+
+form {    
+    background: -webkit-linear-gradient(white 10%, #5F5F5F);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+a.current {
+    font-weight: bold;
+}
+
+.invisible {
+    display: none;
+}
+
+input[type=text], input[type=password] {
+    border: none;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(#1F1F1F, #C4C4C4);
+    padding: 10px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+legend {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+fieldset {
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: right;
+}
+
+button {
+    text-decoration: none;
+    background: -webkit-linear-gradient(#161616, #FCFCFC);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    font-size: 18px;
+    font-family: Arial;
+    margin-right: 60px;
+    margin-top: 5px;
+}
+
+button:hover {
+    background: -webkit-linear-gradient(#222222, #C3C3C3);
+}

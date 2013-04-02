@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <section class="calculator">
+        <div id="window-heading" class="left-float">
+            <div class="left-float" id="icon-area">
+                <img src="images/calculator.png" alt="Calculator" />
+            </div>
+
+            <div class="left-float">
+                Calculator
+            </div>
+        </div>
+
+        <div id="window-buttons">
+            <img src="images/window-buttons.png" alt="Window buttons" />
+        </div>
+
+        <div class="clear black-border" id="content-area">
+            <div id="text-menu">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>View</td>
+                            <td>Edit</td>
+                            <td>Help</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="buttons-fields" class="inline-block">
+                <div id="input-field">
+                    <input type="text" id="calculator-input" class="calculator-font" />
+                </div>
+
+                <div id="binary-stuff" class="outlined calculator-font">
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr class="highlight">
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                            </tr>
+
+                            <tr class="grayed">
+                                <td colspan="4">63</td>
+                                <td colspan="3">47</td>
+                                <td>32</td>
+                            </tr>
+
+                            <tr class="highlight">
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                                <td>0000</td>
+                            </tr>
+
+                            <tr class="grayed">
+                                <td colspan="4">31</td>
+                                <td colspan="3">15</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="radio-buttons" class="left-float">
+                    <div>
+                        <ul>
+                            <li>
+                                <input type="radio" />
+                                Hex</li>
+                            <li>
+                                <input type="radio" checked />
+                                Dec</li>
+                            <li>
+                                <input type="radio" />
+                                Oct</li>
+                            <li>
+                                <input type="radio" />
+                                Bin</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li>
+                                <input type="radio" />
+                                Qword</li>
+                            <li>
+                                <input type="radio" />
+                                Dword</li>
+                            <li>
+                                <input type="radio" />
+                                Word</li>
+                            <li>
+                                <input type="radio" />
+                                Byte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="buttons" class="left-float">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button class="smallButton inactive-button"></button>
+                                </td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Mod</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">A</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">MC</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">MR</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">MS</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">M+</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">M-</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">(</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">)</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">B</button></td>
+                                <td>
+                                    <button class="smallButton active-button">&#8592;</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">CE</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">C</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">+/-</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont inactive-button">V</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">RoL</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">RoR</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">C</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">7</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">8</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">9</button></td>
+                                <td>
+                                    <button class="smallButton active-button">/</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">%</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Or</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Xor</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">D</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">4</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">5</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">6</button></td>
+                                <td>
+                                    <button class="smallButton active-button">*</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">1/x</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Lsh</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Rsh</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">E</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">1</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">2</button></td>
+                                <td>
+                                    <button class="smallButton active-button numberedButton">3</button></td>
+                                <td>
+                                    <button class="smallButton active-button">-</button></td>
+                                <td rowspan="2">
+                                    <button class="active-button equalButton">=</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">Not</button></td>
+                                <td>
+                                    <button class="smallButton smallerFont active-button">And</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">F</button></td>
+                                <td colspan="2">
+                                    <button class="active-button numberedButton wideButton">0</button></td>
+                                <td>
+                                    <button class="smallButton inactive-button">,</button></td>
+                                <td>
+                                    <button class="smallButton active-button">+</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

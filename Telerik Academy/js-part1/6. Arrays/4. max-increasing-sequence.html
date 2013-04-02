@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Maximal increasing sequence</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var array = [ 5, 8, 11, 5, 9, 12, 16, 18, 25, 3, 4, 5, 11, 9, 5, 8, 10, 11 ];
+        var maxSequenceCount = 0;
+        var currentSequence = [];
+        var maxSequence = [];
+        currentSequence.push(array[0]);
+
+        for (var i = 1; i < array.length; i++)
+        {
+            if (array[i] > array[i - 1])
+            {
+                currentSequence.push(array[i]);
+            }
+            else
+            {
+                if (currentSequence.length > maxSequenceCount)
+                {
+                    maxSequenceCount = currentSequence.length;
+                    maxSequence.length = 0;
+
+                    for (var number in currentSequence) maxSequence.push(currentSequence[number]);
+                }
+
+                currentSequence.length = 0;
+                currentSequence.push(array[i]);
+            }
+        }
+
+        jsConsole.write("Max increasing sequence: ");
+
+        for (var item in maxSequence) jsConsole.write(maxSequence[item] + " ");
+    </script>
+</body>
+</html>
+
+

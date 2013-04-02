@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Youngest person</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function findYoungestPerson(people) {
+            var youngest = people[0];
+
+            for (var i in people) {
+                if (people[i].age < youngest.age) youngest = people[i];
+            }
+
+            return { firstname: youngest.firstname, lastname: youngest.lastname, age: youngest.age }; // copy of youngest
+        }
+
+        var people = [
+            { firstname: "Gosho", lastname: "Petrov", age: 32 },
+            { firstname: "Bay", lastname: "Ivan", age: 81 },
+             { firstname: "Little", lastname: "Tim", age: 7 },
+            { firstname: "Ivan", lastname: "Ivanov", age: 22 }
+           ];
+
+        var young = findYoungestPerson(people);
+        jsConsole.writeLine(young.firstname + " " + young.lastname);
+    </script>
+</body>
+</html>

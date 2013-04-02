@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GetMax</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function GetMax(a, b) {
+                return (a > b) ? a : b;
+            }
+
+            var a = 5, b = 2, c = 9;
+
+            jsConsole.writeLine("Biggest: " + GetMax(a, GetMax(b, c)));
+        </script>
+    </div>
+</body>
+</html>

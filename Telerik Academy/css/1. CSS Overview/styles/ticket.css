@@ -1,0 +1,48 @@
+body {
+	font: 12px Arial;
+	color: #BBBDAF;
+}
+
+table {
+	background-color: #595959;
+	padding-right: 100px;
+    border-spacing: 10px;
+}
+
+td.label {
+	font-style: italic;
+	vertical-align: top;
+	color: white;
+}
+
+td#not_answered {
+	color: #D86D1F;
+	font-weight: bold;
+}
+
+td#backgr_td {
+	background-position: 0px 0px;
+    background-repeat: no-repeat;
+	background-image: url('../images/circle.png');
+} 
+
+thead {
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+span#no_support {
+	font-weight: bold;
+	color: red;
+}
+
+span#name {	
+	margin-left: 15px;
+}
+
+a, span#name {
+	color: #FFE97F;
+}

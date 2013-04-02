@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Prototype</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script> 
+        var arr = new Array(1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1");
+        Array.prototype.remove = function (value) {
+            for (var i in this) {
+                if (this[i] == value && typeof this[i] == typeof (value)) this.splice(i, 1);
+            }
+        }
+
+        arr.remove(1);
+
+        jsConsole.writeLine(arr.toString());
+    </script>
+</body>
+</html>

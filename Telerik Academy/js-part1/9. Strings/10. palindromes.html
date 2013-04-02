@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Palindromes</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function extractPalindromes(text) {
+            var palindromes = [];
+            var words = text.match(/\b(\w+)\b/g);
+            var isPalindrome = true;
+
+            for (var i in words) {
+                for (var j = 0; j < words[i].length / 2; j++) {
+                    if (words[i][j] != words[i][words[i].length - 1 - j]) {
+                        isPalindrome = false;
+                        break;
+                    }
+                }
+                if (isPalindrome) palindromes.push(words[i]);
+                isPalindrome = true;
+            }
+
+            return palindromes;
+        }
+
+        var text = "some text.exe with lamal palindromes ABBA in it";
+        var palindromesArr = extractPalindromes(text);
+
+        for (var i in palindromesArr)
+            jsConsole.writeLine(palindromesArr[i]);
+    </script>
+</body>
+</html>
+

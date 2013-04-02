@@ -1,0 +1,59 @@
+﻿body {
+    font: 12px Arial;
+}
+
+button {
+    color: white;
+    font-family: Arial;
+}
+
+header {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.categories {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    width: 30%;
+    padding: 15px;
+}
+
+.category {
+    border: 1px solid gray;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.category img {
+    float: left;
+    margin-right: 15px;
+}
+
+.category .btn {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.category .btn .listen {
+    background-image: url(img/background.png);
+    width: 76px;
+    height: 25px;
+}
+
+.category .btn .add {
+    background-image: url(img/backgroundsmall.png);
+    width: 63px;
+    height: 25px;
+}
+
+.category:last-child { margin-bottom: 0; }
+
+.category p {
+    margin: 0;
+}
+
+
+

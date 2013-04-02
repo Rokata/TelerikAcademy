@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Joro the Rabbit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Solve(args) {
+            var bestLength = 1;
+            var currentLength = 1;
+            var stepsString = args[0].split(',');
+            var stepsValues = [];
+            var currentPos = 0;
+            var prevPos;
+
+            for (var i in stepsString)
+                stepsValues.push(parseInt(stepsString[i]));
+
+            for (var startPos = 0; startPos < stepsValues.length; startPos++) {
+                for (var step = 1; step < stepsValues.length; step++) {
+                    prevPos = startPos;
+                    currentPos = (prevPos + step) % stepsValues.length;
+
+                    while (stepsValues[currentPos] > stepsValues[prevPos]) {
+                        prevPos = currentPos;
+                        currentPos = (prevPos + step) % stepsValues.length;
+                        currentLength++;
+                    }
+
+                    if (currentLength > bestLength) bestLength = currentLength;
+                    currentLength = 1;
+                }
+            }
+
+            return bestLength;
+        }
+
+
+        jsConsole.writeLine(Solve("1, -2, -3, 4, -5, 6, -7, -8"));
+        jsConsole.writeLine(Solve("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0"));
+        jsConsole.writeLine(Solve("1, 1, 1"));
+    </script>
+</body>
+</html>

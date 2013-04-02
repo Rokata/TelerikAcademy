@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Format string</title>
+</head>
+<body>
+    <div data-type="template" id="list-item">
+        <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+    <script>
+        function generateList(people, template) {
+            var props = [];
+            var peopleList = [];
+            peopleList.push("<ul>");
+
+            for (var prop in people[0]) {
+                props.push(prop);
+            }
+
+            for (var i = 0; i < people.length; i++) {
+                peopleList.push("<li>");
+                var liContent = template;
+
+                for (var prop in people[0]) {
+                    liContent = liContent.replace(new RegExp('\\{' + prop + '\\}', "g"), people[i][prop]);
+                }
+
+                peopleList.push(liContent);
+                peopleList.push("</li>");
+            }
+
+            peopleList.push("</ul>");
+
+            return peopleList.join('');
+        }
+
+        var people = [{ name: "Peter", age: 14 }, { name: "George", age: 19 }, { name: "Ronny", age: 22 }, { name: "Steve", age: 24 }];
+        var divPeople = document.getElementById("list-item");
+        var template = divPeople.innerHTML;
+        var peopleList = generateList(people, template);
+
+        divPeople.innerHTML = peopleList;
+    </script>
+</body>
+</html>
+

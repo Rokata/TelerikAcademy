@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Indices</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Solve(args) {
+            function contains(arr, val) {
+                for (var i in arr) {
+                    if (val == arr[i]) return true;
+                }
+                return false;
+            }
+
+            var length = parseInt(args[0]);
+            var numsString = args[1].split(' ');
+            var numbers = [];
+            var currentIndex = 0;
+            var output = [];
+            var startIndexOfCycle = -1;
+            var result = "";
+
+            for (var i = 0; i < numsString.length; i++)
+                numbers.push(parseInt(numsString[i]));
+
+            while (true) {
+                if (contains(output, currentIndex)) {
+                    startIndexOfCycle = currentIndex;
+                    break;
+                }
+
+                if (currentIndex < 0 || currentIndex >= numbers.length) break;
+
+                output.push(currentIndex);
+                currentIndex = numbers[currentIndex];
+            }
+
+            if (output.length == 1 && startIndexOfCycle != -1)
+                return ("(" + output[0] + ")");
+
+            for (var i = 0; i < output.length; i++) {
+                if (output[i] == startIndexOfCycle) {
+                    if (i == output.length - 1) {
+                        result += ("(" + output[i] + ")");
+                        continue;
+                    }
+
+                    result += ("(" + output[i] + " ");
+                    continue;
+                }
+
+                if (i == output.length - 1) {
+                    if (startIndexOfCycle != -1) {
+                        result += (output[i] + ")");
+                    }
+                    else {
+                        result += output[i];
+                    }
+                    continue;
+                }
+
+                if (i != output.length - 1) {
+                    result += output[i];
+
+                    if (output[i + 1] != startIndexOfCycle) {
+                        result += " ";
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        jsConsole.writeLine(Solve("6", "1 2 3 5 7 8"));
+        jsConsole.writeLine(Solve("6", "1 2 3 5 7 1"));
+    </script>
+</body>
+</html>

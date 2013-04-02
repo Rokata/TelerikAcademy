@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add digit arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function AddDigitArrays(first, second)
+        {
+            var result = 0;
+            for (var i = 0; i < first.length; i++)
+            {
+                result += (first[i] * Math.pow(10, i));
+            }
+
+            for (var i = 0; i < second.length; i++)
+            {
+                result += (second[i] * Math.pow(10, i));
+            }
+
+            return result;
+        }
+
+        var firstNumber = [ 5, 3, 6, 1 ]; // 1635
+        var secondNumber = [ 2, 1, 0, 4, 8, 1 ]; // 184012
+
+        jsConsole.writeLine("Result: " + AddDigitArrays(firstNumber, secondNumber)); // 185647
+    </script>
+</body>
+</html>
+

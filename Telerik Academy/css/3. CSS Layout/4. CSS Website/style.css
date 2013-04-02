@@ -1,0 +1,105 @@
+﻿body {
+    background-color: #F1F1F1;
+    font: 11px Verdana; 
+}
+
+.main-container {
+    border: 1px solid black; 
+    overflow: hidden;
+}
+
+nav, section, aside, nav img {
+    float: left;
+}
+
+button {
+    width: 100px;
+    background: white;
+    font: 11px Arial;
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+}
+
+article {
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    color: #A84342;
+}
+
+nav {
+    width: 10%;
+}
+
+    nav ul li:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    nav ul li:first-child {
+        color: #A84342;
+        font-weight: bold;
+    }
+
+section {
+    border: 2px solid #BFBFBF;
+    background-color: white;
+    width: 75%;
+    padding: 10px 5px 10px 5px;
+}
+
+    section article img {
+        margin-right: 10px;
+        float: left;
+    }
+
+    section header p, aside .head {
+        background-color: #808080;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+aside {
+    width: 10%;
+    margin-left: 2px;
+}
+
+    aside ul li, .site-search, .image-banner {
+        background-color: white;
+        border: 1px solid gray;
+        margin-bottom: 1px;
+        padding: 5px;
+    }
+
+    aside .image-banner, aside li, aside p {
+        text-align: center;
+    }
+
+    aside .head {
+        width: 100%;
+        padding: 0 6px 0 6px;
+    }
+
+    aside p {
+        margin: 0;
+    }
+
+    aside div, li {
+        width: 100%;
+    }
+
+    aside input[type=text] {
+        width: 55%;
+    }
+
+    aside div {
+        margin-bottom: 2px;
+    }

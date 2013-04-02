@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check bit 3</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function checkThirdBit(n)
+        {
+           return ((n & (1 << 3)) >> 3);
+        }
+   
+        jsConsole.writeLine("Third bit of 7: " + checkThirdBit(7));
+        jsConsole.writeLine("Third bit of 15: " + checkThirdBit(15));
+    </script>
+</body>
+</html>

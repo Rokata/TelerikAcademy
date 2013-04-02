@@ -1,0 +1,48 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Constantina, Georgia, 'Nimbus Roman No9 L', serif;
+    font-size: 16px;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 29px;
+}
+
+#wrapper {
+    margin: 25px;
+    background: -webkit-linear-gradient(#DE28FF, #F9DBFF);
+    width: 863px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 35px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 0;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 0;
+}
+
+.left-arrow, .right-arrow {
+    top: 83px;
+}
+
+.postedby {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 43%;
+    padding: 5px 10px 5px 15px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}

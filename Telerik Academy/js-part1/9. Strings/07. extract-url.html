@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extract URL</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function extractURL(URL) {
+            var protocol = URL.substr(0, URL.indexOf(':', 0));
+            var offset = URL.indexOf(':', 0) + 3; // skip two slashes and start at the pos after them
+            var nextSlash = URL.indexOf('/', offset);
+
+            var server = URL.substr(offset, nextSlash-offset);
+            var resource = URL.substr(nextSlash);
+
+            return { protocol: protocol, server: server, resource: resource }; 
+        }
+
+        var URL = "http://www.winner.bg/bulgarian-football/read78039.html";
+
+        var urlInfoObject = extractURL(URL);
+
+        jsConsole.writeLine("Protocol: " + urlInfoObject.protocol);
+        jsConsole.writeLine("Server: " + urlInfoObject.server);
+        jsConsole.writeLine("Resource: " + urlInfoObject.resource);
+    </script>
+</body>
+</html>
+

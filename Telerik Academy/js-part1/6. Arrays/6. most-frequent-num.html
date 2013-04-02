@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Most frequent number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function containsKey(dictionary, key) {
+            for (var item in dictionary) {
+                if (dictionary[item].key == key) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function findMostFrequent(dictionary) {
+            var mostFrequent = 0;
+            var times = 0;
+
+            for (var item in dictionary) {
+                if (dictionary[item].value > times) {
+                    times = dictionary[item].value;
+                    mostFrequent = dictionary[item].key;
+                }
+            }
+
+            return { mostFrequent: mostFrequent, times: times };
+        }
+
+        var numbers = [ 111, 9, 4, 1, 9, 1, 4, 9, 2, 3, 4, 9, 4, 1, 2, 4, 9, 3 ];
+        var dictionary = [];
+
+        for (var i in numbers) {
+            if (!containsKey(dictionary, numbers[i])) {
+                dictionary.push({ key: numbers[i], value: 1 });
+            }
+            else {
+                for (var item in dictionary) {
+                    if (dictionary[item].key == numbers[i]) {
+                        dictionary[item].value++;
+                        break;
+                    }
+                }
+            }
+        }
+
+        var result = findMostFrequent(dictionary);
+        jsConsole.writeLine("Most frequent: " + result.mostFrequent + " (" + result.times + " times)");
+    </script>
+</body>
+</html>
+
+
+
+

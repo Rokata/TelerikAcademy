@@ -1,0 +1,46 @@
+body {
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+
+th {
+    text-align: left;
+    background-color: #56b906;
+    color: white;
+    font-weight: normal;
+}
+
+td, th {
+    border-left: 1px solid #99AD99;
+    padding: 3px;
+}
+
+tr:nth-child(even) {
+    background: #EBEBE0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 500px;
+}
+
+#contacts {
+    border: 6px solid #B0E705;
+    border-radius: 5px;
+    width: 500px;
+}
+
+.mexico, .germany, .uk {
+    background-image: url('../images/mex.gif');
+    background-position: 5px 7px;
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+.germany {
+    background-image: url('../images/ger.gif');
+}
+
+.uk {
+    background-image: url('../images/uk.gif');
+}

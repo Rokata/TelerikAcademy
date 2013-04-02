@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Max and min</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var nums = [4, 11, 66, 5, 71, -4, 4, 11, 34, 9];
+        var min = max = nums[0];
+
+        for (var i = 0; i < nums.length; i++) {
+            if (nums[i] > max) max = nums[i];
+            else if (nums[i] < min) min = nums[i];
+        }
+
+        jsConsole.writeLine("Min: " + min + ", Max: " + max);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest of three</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var a = parseInt(prompt("Enter a"));
+        var b = parseInt(prompt("Enter b"));
+        var c = parseInt(prompt("Enter c"));
+
+        if (a > b) {
+            if (b > c) jsConsole.writeLine("The biggest of the three is " + a);
+            if (b < c) {
+                if (a > c) jsConsole.writeLine("The biggest of the three is " + a);
+                else jsConsole.writeLine("The biggest of the three is " +  c);
+            }
+        }
+        else {
+            if (b > c) jsConsole.writeLine("The biggest of the three is " + b);
+            else jsConsole.writeLine("The biggest of the three is " + c);
+        }
+    </script>
+</body>
+</html>
+

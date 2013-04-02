@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+    padding: 20px;
+}
+
+h2, h3 {
+    font-size: 16px;
+}
+
+a {
+    color: #D6296E;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+hgroup {
+    margin-left: 40px;
+}
+
+.yellowBox {
+    background-color: #FFFFDD;
+    border: 1px solid #FFFF00;
+    margin-bottom: 30px;
+}
+
+#wrapper > div {
+    float: left;
+    width: 140px;
+    border: 2px solid #D3D7DA;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+#wrapper > div {
+    background-position: 3px 15px;
+    background-repeat: no-repeat;
+}
+
+    #wrapper > div:nth-child(1) {
+        background-image: url("imgs/install.png");
+    }
+
+    #wrapper > div:nth-child(5) {
+        background-image: url("imgs/twitter.png");
+        border-left: none;
+    }
+
+    #wrapper > div:nth-child(3) {
+        background-image: url("imgs/manage.png");
+        border-left: none;
+    }
+
+    #wrapper > div:first-child + div + div + div hgroup, #wrapper > div:nth-child(5) hgroup,
+    #wrapper > div:first-child + div + div + div + div + div hgroup {
+        margin-top: 20px;
+    }
+
+    #wrapper > div:first-child + div {
+        background-position: 3px 15px, 0px 0px;
+        background-repeat: no-repeat;
+        background-image: url("imgs/tuneUp.png"), -webkit-linear-gradient(white, #F1F2F3);
+    }
+
+        #wrapper > div:first-child + div + div + div {
+            background-position: 3px 15px, 0px 0px;
+            background-repeat: no-repeat;
+            background-image: url("imgs/openSource.png"), -webkit-linear-gradient(white, #F1F2F3);
+        }
+
+            #wrapper > div:first-child + div + div + div + div + div {
+                background-position: 3px 15px, 0px 0px;
+                background-repeat: no-repeat;
+                background-image: url("imgs/about.png"), -webkit-linear-gradient(white, #F1F2F3);
+            }
+
+#wrapper > div {
+    border-collapse: collapse;
+}
+
+    #wrapper > div:nth-of-type(2n) {
+        background: -webkit-linear-gradient(white, #F1F2F3);
+        height: 265px;
+    }
+
+    #wrapper > div:nth-of-type(2n+1) {
+        border-right: none;
+        height: 245px;
+    }
+
+#wrapper div div a {
+    display: block;
+}
+
+#wrapper div div.yellowBox a {
+    display: inline;
+}
+
+#wrapper div div span {
+    text-transform: uppercase;
+}

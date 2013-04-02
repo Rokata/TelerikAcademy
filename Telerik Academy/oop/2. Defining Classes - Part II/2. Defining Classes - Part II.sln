@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Point3DStruct", "Point3DStruct\01. Point3DStruct.csproj", "{34AC87F3-D273-42CF-8DB9-75A630930F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Point3DWithReadOnly", "Point3DWithReadOnly\02. Point3DWithReadOnly.csproj", "{78E5103F-93C0-4225-AFE8-E0F9DC82C330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. CalculateDistanceStatic", "CalculateDistanceStatic\03. CalculateDistanceStatic.csproj", "{1B1515A0-2ADE-4709-B924-382A8218A137}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Path", "Path\04. Path.csproj", "{FC743F2B-1FE1-4204-B093-B6FAF9B075B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05+06+07. GenericList", "GenericList\05+06+07. GenericList.csproj", "{A89300E8-5FA4-41F4-8590-09341C91418F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08+09+10. Matrix", "Matrix\08+09+10. Matrix.csproj", "{7805B25E-50B5-413A-B626-B5CE56ACD223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. VersionAttribute", "VersionAttribute\11. VersionAttribute.csproj", "{CD6FC606-1373-4F07-A2DB-8D4F081AC681}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34AC87F3-D273-42CF-8DB9-75A630930F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34AC87F3-D273-42CF-8DB9-75A630930F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34AC87F3-D273-42CF-8DB9-75A630930F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34AC87F3-D273-42CF-8DB9-75A630930F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E5103F-93C0-4225-AFE8-E0F9DC82C330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E5103F-93C0-4225-AFE8-E0F9DC82C330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E5103F-93C0-4225-AFE8-E0F9DC82C330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E5103F-93C0-4225-AFE8-E0F9DC82C330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1515A0-2ADE-4709-B924-382A8218A137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1515A0-2ADE-4709-B924-382A8218A137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1515A0-2ADE-4709-B924-382A8218A137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1515A0-2ADE-4709-B924-382A8218A137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC743F2B-1FE1-4204-B093-B6FAF9B075B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC743F2B-1FE1-4204-B093-B6FAF9B075B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC743F2B-1FE1-4204-B093-B6FAF9B075B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC743F2B-1FE1-4204-B093-B6FAF9B075B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89300E8-5FA4-41F4-8590-09341C91418F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89300E8-5FA4-41F4-8590-09341C91418F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89300E8-5FA4-41F4-8590-09341C91418F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89300E8-5FA4-41F4-8590-09341C91418F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7805B25E-50B5-413A-B626-B5CE56ACD223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7805B25E-50B5-413A-B626-B5CE56ACD223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7805B25E-50B5-413A-B626-B5CE56ACD223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7805B25E-50B5-413A-B626-B5CE56ACD223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6FC606-1373-4F07-A2DB-8D4F081AC681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6FC606-1373-4F07-A2DB-8D4F081AC681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6FC606-1373-4F07-A2DB-8D4F081AC681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6FC606-1373-4F07-A2DB-8D4F081AC681}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

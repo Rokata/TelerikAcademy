@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>First bigger than neighbours</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function compareToNeighbours(numbersArray, position) {
+            if (position >= numbersArray.length - 1 || position <= 0) {
+                jsConsole.writeLine("Index out of range or element doesn't have 2 neighbours.");
+                return false;
+            }
+
+            if (numbersArray[position] > numbersArray[position - 1] && numbersArray[position] > numbersArray[position + 1]) {
+                return true;
+            }
+            else return false;
+        }
+
+        function findFirstBiggerThanNeighbours(numbersArray) {
+            for (var i = 1; i < numbersArray.length - 1; i++) {
+                if (compareToNeighbours(numbersArray, i)) return i;
+            }
+
+            return -1;
+        }
+
+        var numbersArray = [23, 1, 55, 4, 2, 1, 0, -23, 6, 7, 1, 23, 4];
+        jsConsole.writeLine(findFirstBiggerThanNeighbours(numbersArray));
+    </script>
+</body>
+</html>

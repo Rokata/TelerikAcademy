@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shapes</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function calculateDistance(p1, p2) {
+            return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+        }
+
+        function canFormTriangle(l1, l2, l3) {
+            var l1Length = calculateDistance(l1.start, l1.end);
+            var l2Length = calculateDistance(l2.start, l2.end);
+            var l3Length = calculateDistance(l3.start, l3.end);
+
+            if ((l1Length > l2Length + l3Length) || (l2Length > l1Length + l3Length) || (l3Length > l2Length + l1Length)) return false;
+
+            return true;
+        }
+
+        var lineOne = { start: { x: 1, y: 7 }, end: { x: 5, y: 2 } };
+        var lineTwo = { start: { x: 2, y: -1 }, end: { x: 6, y: 9 }  };
+        var lineThree = { start: { x: 10, y: -1 }, end: { x: 15, y: 3 } };
+
+        jsConsole.writeLine("Can form triangle: " + canFormTriangle(lineOne, lineTwo, lineThree));
+    </script>
+</body>
+</html>

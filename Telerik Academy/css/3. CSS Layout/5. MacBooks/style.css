@@ -1,0 +1,73 @@
+﻿body {
+    font: bold 18px Corbel;
+}
+
+img {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
+fieldset {
+    border-color: #000;
+    padding-bottom: 0;
+}
+
+nav {
+    text-align: center;
+}
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+        nav ul li a {
+            color: #00AFF0;
+        }
+
+.macbooks {
+    border: 2px solid #000;
+    overflow: hidden;
+    padding: 5px;
+    float: left;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+    .macbooks .price {
+        text-align: left;
+        clear: both;
+    }
+
+    .macbooks ul {
+        padding: 0;
+        margin: auto;
+    }
+
+        .macbooks ul li {
+            display: inline-block;
+        }
+
+            .macbooks ul li .specs {
+                float: left;
+                position: relative;
+                left: 5px;
+                top: 20px;
+            }
+
+                .macbooks ul li .specs > li:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+            .macbooks ul li ul li {
+                display: block;
+            }
+
+aside {
+    position: relative;
+    top: 125px;
+    font-size: 22px;
+}

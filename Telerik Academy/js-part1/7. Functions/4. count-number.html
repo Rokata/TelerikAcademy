@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Count number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getNumberCount(number, arr) {
+            var count = 0;
+
+            for (var i in arr) {
+                if (arr[i] == number) count++;
+            }
+
+            return count;
+        }
+
+        var numbersArray = [23, 1, 55, 4, 2, 1, 0, -23, 6, 7, 1, 23, 4];
+        var testNumber = 1;
+        jsConsole.writeLine("Number " + testNumber + " count in array: " + getNumberCount(testNumber, numbersArray));
+    </script>
+</body>
+</html>

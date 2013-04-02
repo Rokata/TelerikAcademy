@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Change text in tags</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function transformHtml(html) {
+            return html.replace(/<mixcase>(.*?)<\/mixcase>/g, function (group) { return generateRandomCaseString(group); })
+            .replace(/<upcase>(.*?)<\/upcase>/g, function (group) { return group.toUpperCase(); })
+            .replace(/<lowcase>(.*?)<\/lowcase>/g, function (group) { return group.toLowerCase(); })
+            .replace(/<(.*?)>/g, "");
+        }
+
+        function generateRandomCaseString(str) {
+            var generated = "";
+            var randomNumber;
+
+            for (var ch in str) {
+                randomNumber = Math.floor(Math.random() * 2); // generates 0 or 1
+
+                if (randomNumber == 1) generated += str[ch].toUpperCase(); // lower/upper chance is 50/50
+                else generated += str[ch].toLowerCase();
+            }
+
+            return generated;
+        }
+
+        var text = "We are <mixcase><upcase>living</upcase></mixcase> in a <upcase><mixcase>yellow <mixcase>submarine</mixcase></mixcase></upcase>. We <mixcase>don't</mixcase> have <lowcase><upcase>any</upcase>thing</lowcase> else.";
+        jsConsole.writeLine(transformHtml(text));
+    </script>
+</body>
+</html>

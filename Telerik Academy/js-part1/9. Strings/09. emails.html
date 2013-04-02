@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Palindromes</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function printEmails(foundEmails) {
+            for (var i in foundEmails) {
+                jsConsole.writeLine("Email #" + parseInt(parseInt(i) + 1));
+                jsConsole.writeLine("Identifier: " + foundEmails[i][1]); // 1, 2, 3, ... n - the desired groups surrounded by () in the regex
+                jsConsole.writeLine("Host: " + foundEmails[i][2]);
+                jsConsole.writeLine("Domain: " + foundEmails[i][3]);
+                jsConsole.writeLine();
+            }
+        }
+
+        function getEmailsFromText(text) {
+            var mailPattern = /([\w_]+)\@(\w+)\.([\w\.]+\w)/g;
+            var matches = [];
+            var match;
+
+            while (match = mailPattern.exec(text))
+                matches.push(match);
+
+            return matches;
+        }
+
+        var text = "Static void Main() somebody@telerik.com. using System,anonymous@host.co.uk return";
+        var foundEmails = getEmailsFromText(text);
+        printEmails(foundEmails);      
+    </script>
+</body>
+</html>
+

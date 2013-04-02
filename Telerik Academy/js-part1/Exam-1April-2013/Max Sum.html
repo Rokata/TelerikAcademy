@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Max Sum</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Solve(args) {
+            a = [];
+            var arrayLength = parseInt(args[0]);
+
+            for (var i = 1; i <= arrayLength; i++)
+                a.push(parseInt(args[i]));
+
+            var currentSum = 0;
+            var biggestSum = -9999999;
+
+            for (var seqLength = 1; seqLength < a.length; seqLength++) {
+                for (var pos = 0; pos < a.length - seqLength + 1; pos++) {
+                    for (var i = pos; i < pos + seqLength; i++) {
+                        currentSum += a[i];
+                    }
+
+                    if (currentSum > biggestSum) biggestSum = currentSum;
+                    currentSum = 0;
+                }
+            }
+
+            return biggestSum;
+        }
+
+        jsConsole.writeLine(Solve("9", "-9", "-8", "-8", "-7", "-6", "-5", "-1", "-7", "-6"));
+    </script>
+</body>
+</html>

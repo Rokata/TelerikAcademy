@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Listy</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Solve() {
+            function processLastCommand(variables, command) {
+                return parseVarValue(variables, command);
+            }
+
+            function parseVarValue(variables, str) {
+                var listStr = str.substring(4, str.length - 1).split(",");
+                jsConsole.writeLine("listStr: " + listStr);
+                var numbers = [];
+                var value;
+
+                for (var i in listStr) {
+                    if (isNaN(listStr[i]))
+                        numbers.push(variables[listStr[i]]);
+
+                    else numbers.push(parseInt(listStr[i]));
+                }
+
+
+                if (str.indexOf("sum") != -1) {
+                    value = 0;
+                    for (var i in numbers)
+                        value += numbers[i];
+                }
+                else if (str.indexOf("min") != -1) {
+                    var min = numbers[0];
+
+                    for (var i in numbers)
+                        if (numbers[i] < min) min = numbers[i];
+
+                    value = min;
+                }
+                else if (str.indexOf("max") != -1) {
+                    var max = numbers[0];
+
+                    for (var i in numbers)
+                        if (numbers[i] > max) max = numbers[i];
+
+                    value = max;
+                }
+                else if (str.indexOf("avg") != -1) {
+                    value = 0;
+                    for (var i in numbers)
+                        value += numbers[i];
+
+                    value /= numbers.length;
+                }
+                else if (str.indexOf(",") != -1) value = numbers;
+                else {
+                    return variables[str.substring(1, str.length - 2)];
+                }
+
+                return value;
+            }
+
+
+            args = arguments;
+            var variables = {};
+            var specialCommands = [];
+            var finalResult;
+
+            for (var i in args) {
+                if (args[i].indexOf("def") != -1) {
+                    var nextSpaceIndex = args[i].indexOf(' ', 4);
+                    var currentVarName = args[i].substring(4, args[i].indexOf(' ', 4));
+                    var valueAsString = args[i].substr(nextSpaceIndex);
+                    var currentVarValue = parseVarValue(variables, valueAsString.trim());
+
+                    jsConsole.writeLine(currentVarName);
+                    jsConsole.writeLine(valueAsString);
+                    jsConsole.writeLine(currentVarValue);
+                    
+                    variables[currentVarName] = currentVarValue;
+                }
+                else finalResult = processLastCommand(variables, args[i]);
+            }
+
+            //for (var i in variables) jsConsole.writeLine(variables[i]);
+
+            jsConsole.writeLine("final: "+finalResult);
+            return finalResult;
+        }
+
+        var nums = [2, 3, -6, -1, 2, -1, 6, 4, -8, 8];
+        jsConsole.writeLine(Solve("def func sum[5, 3, 7, var2, 2, 6, 3]", "[func]"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Deep copy</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function deepCopy(target, copy) {
+            var copy = copy || {};
+            for (var i in target) {
+                if (typeof target[i] === 'object') {
+                    copy[i] = (target[i].constructor === Array) ? [] : {};
+                    deepCopy(target[i], copy[i]);
+                }
+                else copy[i] = target[i];
+            }
+            return copy;
+        }
+
+        var obj = {
+            id: 15,
+            inner: {
+                field1: {
+                    num: 11
+                }
+            }
+        };
+
+        var clone = deepCopy(obj);
+        clone.inner.field1.num = 99;
+
+        jsConsole.writeLine(obj.inner.field1.num);
+        jsConsole.writeLine(clone.inner.field1.num);
+    </script>
+</body>
+</html>

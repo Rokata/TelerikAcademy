@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1. Web Form</title>
+        <meta charset="UTF-8">
+        <style>  
+            body {
+                font: 14px Arial;
+            }
+            
+            table {
+                border-collapse: collapse;
+                width: 600px;
+            }
+                        
+            td {
+                border-left: 2px solid #999999;
+                border-bottom: 2px solid #999999;
+            }
+            
+            .label {
+                text-align: right;
+                font-weight: bold;
+				width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+		<table style="border: 2px solid #999999">
+            <tr>
+                <td class="label"><label for="lastname">Last Name</label></td>
+                <td><input type="text" name="lastname" id="lastname" placeholder="Your last name" size="35"/></td>
+            </tr>
+            
+            <tr>
+                <td class="label"><label for="firstname">First Name</label></td>
+                <td><input type="text" name="firstname" id="firstname" placeholder="Your first name" size="35" /></td>
+            </tr>
+            
+            <tr>
+                <td class="label"><label for="address">Address</label></td>
+                <td><textarea id="address" rows="6" cols="30"></textarea></td>
+            </tr>
+            
+            <tr>
+                <td class="label"><label for="city">City</label></td>
+                <td>	
+					<input type="text" id="city" />
+					<label for="state" class="label">State</label>
+					<input type="text" id="state" size="5" />
+				</td>
+            </tr>
+            
+            <tr>
+                <td class="label"><label for="zip">Zip/Postal Code</label></td>
+                <td><input type="number" min="1000" max="10000" id="zip"/></td>
+            </tr>
+            
+            <tr>
+                <td class="label"><label for="country">Country</label></td>
+                <td>
+                    <select name="country" id="country">
+                        <option value="1">Bulgaria</option>
+                        <option value="2">Mexico</option>
+                        <option value="3">Brazil</option>
+                        <option value="4">Portugal</option>
+                        <option value="5">Other</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right" class="label">Phone (country code, area code, number)</td>
+                <td>(+<input type="text" value="359" size="5"/>)
+                <input type="text" value="88" size="5"/>-<input type="text" value="8334343" size="10"/></td>
+            </tr>
+			
+			<tr>
+                <td class="label"><label for="email">Email </label></td>
+				<td>
+					<input type="text" name="email" id="email" placeholder="Your email..." size="35" />
+				</td>
+            </tr>
+			
+			<tr>
+                <td class="label">Birth date</td>
+				<td>
+					Month <input type="text" size="1" /> 
+					Day <input type="text" size="1" /> 
+					Year (4 digit) <input type="text" size="1" /> 
+				</td>
+            </tr>
+			
+			<tr>
+                <td class="label"><label for="gender">Gender</label></td>
+				<td>
+					<select id="gender">
+						<option value="m">Male</option>
+						<option value="f">Female</option>
+					</select>
+				</td>
+            </tr>
+			
+			<tr>
+                <td class="label"><label for="start_date">Starting date</label></td>
+				<td>
+					<input type="radio" name="start_date" id="start_date" value="1" checked="checked"/> Spring 2006
+					<input type="radio" name="start_date" id="start_date" value="2"/> Summer 2006
+				</td>
+            </tr>
+			
+			<tr>
+                <td class="label"><label for="comments">Comments/Questions</label></td>
+				<td>
+					<textarea id="comments" rows="6" cols="30" value="Please send me more information about the lodging"></textarea>
+				</td>
+            </tr>
+			
+			<tr style="background-color: #A3FFD1; text-align: center;">
+                <td colspan="2">
+					<input type="submit" value="Submit"/>
+					<input type="reset" value="Clear This Form" >
+				</td>
+            </tr>
+        </table>
+		</form>
+    </body>
+</html>

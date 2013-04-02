@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Compare arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function compareArrays(charArrayOne, charArrayTwo) {
+            var smallerLength = (charArrayOne.length < charArrayTwo.length) ? charArrayOne.length : charArrayTwo.length;
+
+            for (var i = 0; i < smallerLength; i++) {
+                if (charArrayOne[i] > charArrayTwo[i]) {
+                    jsConsole.writeLine("charArrayOne > charArrayTwo lexicographically");
+                    return;
+                }
+                else if (charArrayOne[i] < charArrayTwo[i]) {
+                    jsConsole.writeLine("charArrayOne < charArrayTwo lexicographically");
+                    return;
+                }
+            }
+
+            if (charArrayOne.length == charArrayTwo.length) {
+                jsConsole.writeLine("Arrays equal.");
+                return;
+            }
+            else {
+                if (smallerLength == charArrayOne.length) jsConsole.writeLine("charArrayOne < charArrayTwo lexicographically");
+                else jsConsole.writeLine("charArrayOne > charArrayTwo lexicographically");
+            }
+        }
+
+        var charArrayOne = prompt("Enter a word");
+        var charArrayTwo = prompt("Enter another word");
+        compareArrays(charArrayOne, charArrayTwo);
+    </script>
+</body>
+</html>
+
