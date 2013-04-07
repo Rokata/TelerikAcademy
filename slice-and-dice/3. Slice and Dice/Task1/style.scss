@@ -24,6 +24,10 @@ body {
 		font-weight: bold;
 	}
 
+	img {
+		border: 1px solid black;
+	}
+
 	#wrapper {
 		background-color: #E6DEF5;
 		margin: 0 auto;
@@ -33,6 +37,10 @@ body {
 			background: url(images/header.png) right no-repeat;
 			height: 47px;
 			background-color: white;
+
+			img {
+				border: none;
+			}
 		}
 
 		#nav {
@@ -96,7 +104,7 @@ body {
 
 				ul#hyperlink {
 					color: orange;
-					padding-bottom: 60px;
+					padding-bottom: 65px;
 					padding-left: 10px;
 				}
 			}
@@ -107,10 +115,9 @@ body {
 				float: left;
 				background: #F9F4FD;
 				margin-top: 2px;
-				padding-bottom: 19px;
+				padding-bottom: 18px;
 
 				#moreLinks {
-
 					ul {
 						float: left;
 						color: orange;
