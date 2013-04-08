@@ -1,3 +1,7 @@
+body, div, ul {
+  margin: 0;
+  padding: 0; }
+
 body {
   font-family: Verdana;
   color: #424284; }
@@ -75,6 +79,7 @@ body {
       body #wrapper #aside #moreLinks {
         clear: both; }
         body #wrapper #aside #moreLinks ul {
+          padding-left: 25px;
           float: left;
           color: orange;
           margin-top: 2px; }
