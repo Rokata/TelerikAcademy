@@ -118,6 +118,8 @@ body {
 				padding-bottom: 18px;
 
 				#moreLinks {
+					clear: both;
+
 					ul {
 						float: left;
 						color: orange;
@@ -129,13 +131,16 @@ body {
 					padding-left: 10px;
 					margin-bottom: 5px;
 					list-style-type: none;
+					clear: both;
 
 					li {
-						display: inline-block;
+						display: block;
 						margin-bottom: 5px;
+						clear: both;
 
 						img {
 							margin-right: 10px;
+							margin-bottom: 5px;
 							float: left;
 						}
 
