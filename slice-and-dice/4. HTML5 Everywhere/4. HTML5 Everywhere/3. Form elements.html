@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        li { display: block; margin-bottom: 10px; }
+    </style>
+    <title>Form elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="scripts/modernizr/modernizr.forms.js"></script>
+    <script src="http://afarkas.github.com/webshim/demos/js-webshim/minified/polyfiller.js"></script>
+    <script>
+        $.webshims.polyfill('forms');
+    </script>
+</head>
+<body>
+    <ul>
+        <li><input type="range" /></li>
+        <li><input type="number" /></li>
+        <li><input type="email" /></li>
+        <li><input type="date" /></li>
+        <li><input type="color" /></li>
+        <li><input type="datetime" /></li>
+        <li><input type="month" /></li>
+        <li><input type="search" /></li>
+        <li><input type="tel" /></li>
+        <li><input type="time" /></li>
+        <li><input type="url" /></li>
+        <li><input type="week" /></li>        
+    </ul>      
+</body>
+</html>
