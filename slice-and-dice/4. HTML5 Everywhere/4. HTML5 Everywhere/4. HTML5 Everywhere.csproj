@@ -60,12 +60,14 @@
     <Content Include="geolocation.html" />
     <Content Include="scripts\css3-pie\PIE_uncompressed.htc" />
     <Content Include="scripts\css3-pie\PIE_uncompressed.js" />
+    <Content Include="scripts\geo.js" />
     <Content Include="scripts\html5shiv\html5shiv.js" />
     <Content Include="scripts\js-shims\index-of.js" />
     <Content Include="scripts\modernizr\modernizr.audio.js" />
     <Content Include="scripts\modernizr\modernizr.cssgradients.js" />
     <Content Include="scripts\modernizr\modernizr.geolocation.js" />
     <Content Include="scripts\webshims\polyfiller.js" />
+    <Content Include="styles\geolocation.css" />
     <Content Include="styles\task1.css" />
     <Content Include="styles\task1.min.css">
       <DependentUpon>task1.less</DependentUpon>

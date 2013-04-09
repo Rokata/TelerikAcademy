@@ -1,0 +1,19 @@
+﻿body {
+    font: 13px Tahoma;
+}
+
+div.geolocation {
+    width: 400px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.geolocation, #map {
+    margin: 0 auto;
+}
+
+#map {
+    height: 500px;
+    width: 500px;
+}
