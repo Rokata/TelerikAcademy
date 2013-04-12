@@ -4,8 +4,8 @@ namespace MinesGame
 {
     public class Player
     {
-        string name;
-        int points;
+        private string name;
+        private int points;
 
         public Player() 
         { 

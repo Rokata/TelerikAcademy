@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace MinesGame
 {
-    public class Mines
+    public class MinesGame
     {
         static void Main(string[] args)
         {
@@ -19,24 +17,30 @@ namespace MinesGame
             int col = 0;
             bool hasEndedGame = true;
             const int maxScore = 35;
+            const int MinCommandLength = 3;
             bool hasCompletedGame = false;
 
             do
             {
                 if (hasEndedGame)
                 {
-                    Console.WriteLine("Hajde da igraem na “Mini4KI”. Probvaj si kasmeta da otkriesh poleteta bez mini4ki." +
-                    " Komanda 'top' pokazva klasiraneto, 'restart' po4va nova igra, 'exit' izliza i hajde 4ao!");
+                    Console.WriteLine("Let's play minesweeper! Try your luck and find the places without bombs.");
+                    Console.WriteLine("Enter 'top' to view top players");
+                    Console.WriteLine("Enter 'restart' to begin new game");
+                    Console.WriteLine("Enter 'exit' to close the game");
                     DisplayBoard(board);
                     hasEndedGame = false;
                 }
-                Console.Write("Daj row i col : ");
+                Console.Write("Enter row and col: ");
                 command = Console.ReadLine().Trim();
-                if (command.Length >= 3)
+                if (command.Length >= MinCommandLength)
                 {
-                    if (int.TryParse(command[0].ToString(), out row) &&
-                        int.TryParse(command[2].ToString(), out col) &&
-                        row <= board.GetLength(0) && col <= board.GetLength(1))
+                    string[] positions = command.Split(' ');
+
+                    if (int.TryParse(positions[0], out row) &&
+                        int.TryParse(positions[1], out col) &&
+                        row < board.GetLength(0) && col < board.GetLength(1) &&
+                        positions.Length == 2)
                     {
                         command = "turn";
                     }
@@ -54,7 +58,7 @@ namespace MinesGame
                         hasEndedGame = false;
                         break;
                     case "exit":
-                        Console.WriteLine("4a0, 4a0, 4a0!");
+                        Console.WriteLine("Bye-bye!");
                         break;
                     case "turn":
                         if (bombs[row, col] != '*')
@@ -79,15 +83,16 @@ namespace MinesGame
                         }
                         break;
                     default:
-                        Console.WriteLine("\nGreshka! nevalidna Komanda\n");
+                        Console.WriteLine("\nError! Invalid command or row and col outside the board.\n");
                         break;
                 }
                 if (hasExploded)
                 {
                     DisplayBoard(bombs);
-                    Console.Write("\nHrrrrrr! Umria gerojski s {0} to4ki. " + "Daj si nickname: ", count);
+                    Console.Write("\nOwww! You lost. Result: {0} point(s). " + "Enter your nickname: ", count);
                     string nickname = Console.ReadLine();
                     Player newPlayer = new Player(nickname, count);
+
                     if (champions.Count < 5)
                     {
                         champions.Add(newPlayer);
@@ -104,6 +109,7 @@ namespace MinesGame
                             }
                         }
                     }
+
                     champions.Sort((Player first, Player second) => first.Name.CompareTo(second.Name));
                     champions.Sort((Player first, Player second) => second.Points.CompareTo(first.Points));
                     DisplayScores(champions);
@@ -116,9 +122,9 @@ namespace MinesGame
                 }
                 if (hasCompletedGame)
                 {
-                    Console.WriteLine("\nBRAVOOOS! Otvri 35 kletki bez kapka kryv.");
+                    Console.WriteLine("\nCongratulations. You achieved the max score of 35 points!");
                     DisplayBoard(bombs);
-                    Console.WriteLine("Daj si imeto, batka: ");
+                    Console.WriteLine("Enter your name, champion: ");
                     string name = Console.ReadLine();
                     Player player = new Player(name, count);
                     champions.Add(player);
@@ -131,25 +137,25 @@ namespace MinesGame
                 }
             }
             while (command != "exit");
-            Console.WriteLine("Made in Bulgaria - Uauahahahahaha!");
-            Console.WriteLine("AREEEEEEeeeeeee.");
+            Console.WriteLine("Made in Bulgaria");
+            Console.WriteLine("See you soon.");
             Console.Read();
         }
 
         private static void DisplayScores(List<Player> players)
         {
-            Console.WriteLine("\nTo4KI:");
+            Console.WriteLine("\nScoreboard:");
             if (players.Count > 0)
             {
                 for (int i = 0; i < players.Count; i++)
                 {
-                    Console.WriteLine("{0}. {1} --> {2} kutii", i + 1, players[i].Name, players[i].Points);
+                    Console.WriteLine("{0}. {1} --> {2} point(s)", i + 1, players[i].Name, players[i].Points);
                 }
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("prazna klasaciq!\n");
+                Console.WriteLine("Empty scoreboard!\n");
             }
         }
 
@@ -213,7 +219,7 @@ namespace MinesGame
             while (randomNumbers.Count < 15)
             {
                 Random random = new Random();
-                int randomNumber = random.Next(50);
+                int randomNumber = random.Next(rows * cols);
                 if (!randomNumbers.Contains(randomNumber))
                 {
                     randomNumbers.Add(randomNumber);
@@ -222,24 +228,24 @@ namespace MinesGame
 
             foreach (int random in randomNumbers)
             {
-                int col = (random / cols);
-                int row = (random % cols);
-                if (row == 0 && random != 0)
-                {
-                    col--;
-                    row = cols;
-                }
-                else
-                {
-                    row++;
-                }
-                board[col, row - 1] = '*';
+                int row = (random / cols);
+                int col = (random % cols);
+                //if (col == 0 && random != 0)
+                //{
+                //    row--;
+                //    col = cols;
+                //}
+                //else
+                //{
+                //    col++;
+                //}
+                board[row, col] = '*';
             }
 
             return board;
         }
 
-        private static void SetBombsAroundNumbers(char[,] board)
+        private static void SetBombsAroundCount(char[,] board)
         {
             int rows = board.GetLength(0);
             int cols = board.GetLength(1);
