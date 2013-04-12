@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Events
+﻿namespace Events
 {
+    using System;
+
     public static class Messages
     {
         public static void EventAdded()

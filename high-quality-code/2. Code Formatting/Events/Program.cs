@@ -1,8 +1,8 @@
-﻿using System;
-using System.Text;
-
-namespace Events
+﻿namespace Events
 {
+    using System;
+    using System.Text;
+
     class Program
     {
         public static StringBuilder output = new StringBuilder();

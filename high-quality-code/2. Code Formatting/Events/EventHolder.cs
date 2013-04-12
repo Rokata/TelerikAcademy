@@ -1,8 +1,8 @@
-﻿using System;
-using Wintellect.PowerCollections;
-
-namespace Events
+﻿namespace Events
 {
+    using System;
+    using Wintellect.PowerCollections;
+
     public class EventHolder
     {
         private MultiDictionary<string, Event> byTitle = new MultiDictionary<string, Event>(true);

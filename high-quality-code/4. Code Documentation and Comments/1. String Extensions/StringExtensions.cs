@@ -32,7 +32,9 @@
             return builder.ToString();
         }
 
-        /// <summary>Method to return the bool value equivalent to a string.</summary> 
+        /// <summary>
+        /// Method to return the bool value equivalent to a string.
+        /// </summary> 
         /// <param name="input">The string on which the method is called.</param>
         /// <returns>
         /// Returns true if the string is among the array with
@@ -44,7 +46,14 @@
             return stringTrueValues.Contains(input.ToLower());
         }
 
-
+        /// <summary>
+        /// Method to return the short value equivalent to a string.
+        /// </summary> 
+        /// <param name="input">The string on which the method is called.</param>
+        /// <returns>
+        /// Returns a short number if the conversion is successfull or
+        /// the default short value otherwise.
+        /// </returns>
         public static short ToShort(this string input)
         {
             short shortValue;
@@ -52,6 +61,14 @@
             return shortValue;
         }
 
+        /// <summary>
+        /// Method to return the integer value equivalent to a string.
+        /// </summary> 
+        /// <param name="input">The string on which the method is called.</param>
+        /// <returns>
+        /// Returns an integer number if the conversion is successfull or
+        /// the default integer value otherwise.
+        /// </returns>
         public static int ToInteger(this string input)
         {
             int integerValue;
@@ -59,6 +76,14 @@
             return integerValue;
         }
 
+        /// <summary>
+        /// Method to return the long value equivalent to a string.
+        /// </summary> 
+        /// <param name="input">The string on which the method is called.</param>
+        /// <returns>
+        /// Returns a long number if the conversion is successfull or
+        /// the default long value otherwise.
+        /// </returns>
         public static long ToLong(this string input)
         {
             long longValue;
@@ -66,6 +91,12 @@
             return longValue;
         }
 
+        /// <summary>Method to return the DateTime value equivalent to a string.</summary> 
+        /// <param name="input">The string on which the method is called.</param>
+        /// <returns>
+        /// Returns DateTime struct if the conversion is successfull or
+        /// 1/1/0001 date otherwise.
+        /// </returns>
         public static DateTime ToDateTime(this string input)
         {
             DateTime dateTimeValue;
@@ -73,6 +104,15 @@
             return dateTimeValue;
         }
 
+        /// <summary>
+        /// Method to return a new string with capitilez first letter
+        /// based on the string on which it is called
+        /// </summary> 
+        /// <param name="input">The string on which the method is called.</param>
+        /// <returns>
+        /// Returns a new string based on the original with the first letter capitalized
+        /// or empty string if the input is an empty string or is null value.
+        /// </returns>
         public static string CapitalizeFirstLetter(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -83,16 +123,41 @@
             return input.Substring(0, 1).ToUpper(CultureInfo.CurrentCulture) + input.Substring(1, input.Length - 1);
         }
 
+        /// <summary>
+        ///  A method to return a substring which is between certain start and end string from given
+        ///  starting index.
+        /// </summary>
+        /// <param name="input">The string on which the method is called.</param>
+        /// <param name="startString">
+        /// The string after which the searched substring will start.
+        /// </param>
+        /// <param name="endString">
+        /// The string before which the searched substring will end.
+        /// </param>
+        /// <param name="startFrom">Optional parameter indicating the index from which to start search.</param>
+        /// <returns>Returns the substring meeting the criteria or empty string otherwise.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// This exception will be thrown
+        /// if startFrom parameter is smaller than 0 or bigger than the length of the string
+        /// </exception>
+        /// <remarks>
+        /// The string on which the method is called must contain both startString and endString params
+        /// to produce proper result.
+        /// </remarks>
         public static string GetStringBetween(this string input, string startString, string endString, int startFrom = 0)
         {
             input = input.Substring(startFrom);
             startFrom = 0;
-            if (!input.Contains(startString) || !input.Contains(endString))
+            if (!input.Contains(startString) || !input.Contains(endString)) /* If the input doesn't contain either of the two strings
+                                                                             * an empty string will be returned. */
             {
                 return string.Empty;
             }
 
+            /* This line calculates what is the index of the beginning of the substring we seek for. 
+             * It's right after the startString param. */
             var startPosition = input.IndexOf(startString, startFrom, StringComparison.Ordinal) + startString.Length;
+
             if (startPosition == -1)
             {
                 return string.Empty;
@@ -107,6 +172,11 @@
             return input.Substring(startPosition, endPosition - startPosition);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string ConvertCyrillicToLatinLetters(this string input)
         {
             var bulgarianLetters = new[]

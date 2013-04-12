@@ -1,8 +1,8 @@
-﻿using System;
-using System.Text;
+﻿namespace Events
+{
+    using System;
+    using System.Text;
 
-namespace Events
-{ 
     public class Event : IComparable
     {
         private DateTime date;
