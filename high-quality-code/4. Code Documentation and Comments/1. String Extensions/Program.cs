@@ -6,8 +6,10 @@
     {
         static void Main()
         {
-            string str = "dsdds";
-            Console.WriteLine(str.GetStringBetween("dsds", "dsds", 432432));
+            /*
+             * Main method just to test what exceptions are thrown 
+             * in the string extension methods.
+             * */   
         }
     }
 }
