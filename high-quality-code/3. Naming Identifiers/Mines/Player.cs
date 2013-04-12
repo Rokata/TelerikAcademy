@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MinesGame
+﻿namespace MinesGame
 {
+    using System;
+
     public class Player
     {
         private string name;

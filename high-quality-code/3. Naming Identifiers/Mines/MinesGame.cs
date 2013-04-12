@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MinesGame
+﻿namespace MinesGame
 {
+    using System;
+    using System.Collections.Generic;
+
     public class MinesGame
     {
         static void Main(string[] args)
