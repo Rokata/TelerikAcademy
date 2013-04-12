@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace BoolToStringClass
+﻿namespace BoolToStringClass
 {
+    using System;
+
     class Program
     {
         const int MaxCount = 6;

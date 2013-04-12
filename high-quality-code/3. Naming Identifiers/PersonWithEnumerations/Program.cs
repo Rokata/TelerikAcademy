@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace PersonWithEnumerations
+﻿namespace PersonWithEnumerations
 {
+    using System;
+
     class Program
     {
         enum Sex { Male, Female };
