@@ -11,23 +11,43 @@ function generateTagCloud(tags, minFontSize, maxFontSize) {
     var terms = createSortedDictionaryWithTerms(tags);
     var currentFontSize = maxFontSize;
     var prevValue = terms[0].value;
-    var differentValuesCount = getDifferentValuesCount(terms);
-    var fontSizeDifference = Math.floor((maxFontSize - minFontSize) / differentValuesCount);
+    var differentValuesCount = getDifferentValuesCount(terms); 
+    var fontSizeDifference = Math.floor((maxFontSize - minFontSize) / differentValuesCount); // how smaller will the next element with lower frequency value be
 
     for (var i = 0; i < terms.length; i++) {
         var cloudItem;
 
-        if (prevValue != terms[i].value) {
-            currentFontSize -= fontSizeDifference;
+        if (prevValue != terms[i].value) { // if true, the current element has smaller value so it must have smaller font size
+            currentFontSize -= fontSizeDifference; 
             prevValue = terms[i].value;
         }
 
-        if (i == terms.length - 1 || terms[i].value == terms[terms.length - 1].value)
+        // if there are more than 1 elements with min value
+        // it is necessary to make the check because calculating will not always be correct and might not reach the min font size
+        if (i == terms.length - 1 || terms[i].value == terms[terms.length - 1].value) 
             cloudItem = createCloudEntry(terms[i].key, minFontSize);
         else
             cloudItem = createCloudEntry(terms[i].key, currentFontSize);
 
         cloud.appendChild(cloudItem);
+    }
+
+    placeCloudItems(cloud);
+}
+
+/*
+    Position the elements here, after they were added to the DOM beacause
+    if they weren't it wouldn't be possible to get their computed width and height. 
+    And it is needed to make sure the element's text isn't fully or partially hidden (overflowed).
+*/
+function placeCloudItems(cloud) {
+    var cloudItems = cloud.childNodes;
+
+    for (var i = 0; i < cloudItems.length; i++) {
+        var itemHeight = parseInt(window.getComputedStyle(cloudItems[i], null).getPropertyValue("height"));
+        var itemWidth = parseInt(window.getComputedStyle(cloudItems[i], null).getPropertyValue("width"));
+        cloudItems[i].style.top = getRandomPosition(0, cloudHeight - itemHeight) + 'px';
+        cloudItems[i].style.left = getRandomPosition(0, cloudWidth - itemWidth) + 'px';
     }
 }
 
@@ -37,11 +57,7 @@ function createCloudEntry(termName, fontSize) {
     div.style.fontSize = fontSize + "px";
     div.style.position = "absolute";
     div.style.display = "inline-block";
-    div.style.top = getRandomPosition(0, cloudHeight - 40) + 'px';
-    div.style.left = getRandomPosition(0, cloudWidth - 150) + 'px';
-
-    //document.write("Left: " + getRandomPosition(0, parseInt(cloudHeight)) + ", Top: " + getRandomPosition(0, parseInt(cloudWidth)) + "<br/>");
-    //document.write(div.style.width + " | " + div.style.height + "<br/>");
+    div.className = "cloud-item";
 
     return div;
 }
@@ -56,7 +72,7 @@ function getDifferentValuesCount(dictionary) {
     var count = 1;
 
     for (var i = 0; i < dictionary.length; i++) {
-        if (prev != dictionary[i].value) { // checks if there's a new different value
+        if (prev != dictionary[i].value) { 
             count++;
             prev = dictionary[i].value;
         }
@@ -98,10 +114,4 @@ function sortDictionary(dictionary) {
                 dictionary[i] = temp;
             }
         }
-}
-
-function printDictionary(dictionary) {
-    for (var i = 0; i < dictionary.length; i++) {
-        document.write(dictionary[i].key + " " + dictionary[i].value + "<br/>");
-    }
 }

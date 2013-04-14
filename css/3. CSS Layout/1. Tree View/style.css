@@ -11,11 +11,3 @@ li:hover > ul {
     display: block;
 }
 
-/*li:hover {
-    text-decoration: underline;
-}
-
-li:hover ul > li { 
-   text-decoration: none;
-}*/
-
