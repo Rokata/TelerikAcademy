@@ -13,6 +13,7 @@ function generateTagCloud(tags, minFontSize, maxFontSize) {
     var prevValue = terms[0].value;
     var differentValuesCount = getDifferentValuesCount(terms); 
     var fontSizeDifference = Math.floor((maxFontSize - minFontSize) / differentValuesCount); // how smaller will the next element with lower frequency value be
+    var fragment = document.createDocumentFragment();
 
     for (var i = 0; i < terms.length; i++) {
         var cloudItem;
@@ -29,9 +30,9 @@ function generateTagCloud(tags, minFontSize, maxFontSize) {
         else
             cloudItem = createCloudEntry(terms[i].key, currentFontSize);
 
-        cloud.appendChild(cloudItem);
+        fragment.appendChild(cloudItem);
     }
-
+    cloud.appendChild(fragment);
     placeCloudItems(cloud);
 }
 
