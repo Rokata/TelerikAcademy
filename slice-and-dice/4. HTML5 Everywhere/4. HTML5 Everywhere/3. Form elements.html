@@ -2,30 +2,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
+        ul { list-style-type: none; } 
         li { display: block; margin-bottom: 10px; }
     </style>
+
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="scripts/fd-slider.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="http://www.frequency-decoder.com/demo/fd-slider/css/fd-slider.mhtml.min.css" />
+    <![endif]-->
     <title>Form elements</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="scripts/modernizr/modernizr.forms.js"></script>
-    <script src="http://afarkas.github.com/webshim/demos/js-webshim/minified/polyfiller.js"></script>
-    <script>
-        $.webshims.polyfill('forms');
-    </script>
+    <script src="scripts/webshims/shared/js/modernizr.com/Modernizr-2.5.3.forms.js"></script>
+    <script type="text/javascript" src="scripts/webshims/shared/js/html5Forms.js" data-webforms2-support="date, color, validation, range" data-webforms2-force-js-validation="false" data-lang="en"></script>
 </head>
 <body>
-    <ul>
-        <li><input type="range" /></li>
-        <li><input type="number" /></li>
-        <li><input type="email" /></li>
-        <li><input type="date" /></li>
-        <li><input type="color" /></li>
-        <li><input type="datetime" /></li>
-        <li><input type="month" /></li>
-        <li><input type="search" /></li>
-        <li><input type="tel" /></li>
-        <li><input type="time" /></li>
-        <li><input type="url" /></li>
-        <li><input type="week" /></li>        
-    </ul>      
+    <form>
+        <ul>
+            <li>Range:
+                <input name="html5shim-1" id="html5shim-1" type="range" pattern="\d+" /></li>
+            <li>Number:
+                <input type="number" pattern="\d+" /></li>
+            <li>Email:
+                <input type="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$"/></li>
+            <li>Date:
+                <input type="date" /></li>
+            <li>Color:
+                <input type="color" /></li>
+            <li>Datetime:
+                <input type="datetime-local" /></li>
+            <li>Month:
+                <input type="month" /></li>
+            <li>Search:
+                <input type="search" /></li>
+            <li>Tel:
+                <input type="tel" pattern="\d+"/></li>
+            <li>Time:
+                <input type="time" pattern="\d{1,2}:\d{1,2}"/></li>
+            <li>URL:
+                <input type="url" /></li>
+            <li>Week:
+                <input type="week" /></li>
+        </ul>
+
+        <input type="submit" value="Submit" />
+    </form>
 </body>
 </html>

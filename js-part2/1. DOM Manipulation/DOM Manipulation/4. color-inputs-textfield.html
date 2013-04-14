@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Color inputs and textfield</title>
+    <script>
+        function changeTextareaColors() {
+            var fontColor = document.getElementById("fontColorInput").value;
+            var backgroundColor = document.getElementById("backgroundColorInput").value;
+
+            var textarea = document.getElementsByTagName("textarea")[0];
+            textarea.style.color = fontColor;
+            textarea.style.backgroundColor = backgroundColor;
+        }
+    </script>
+</head>
+<body>
+    <input type="color" id="fontColorInput" onchange="changeTextareaColors()" />
+    <input type="color" id="backgroundColorInput" onchange="changeTextareaColors()" />
+    <textarea style="display:block;" rows="5" cols="30"></textarea>
+</body>
+</html>

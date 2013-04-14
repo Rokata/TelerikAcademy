@@ -63,12 +63,7 @@
     <Content Include="scripts\css3-pie\PIE_uncompressed.js" />
     <Content Include="scripts\geo.js" />
     <Content Include="scripts\html5shiv\html5shiv.js" />
-    <Content Include="scripts\js-shims\index-of.js" />
-    <Content Include="scripts\modernizr\modernizr.audio.js" />
     <Content Include="scripts\modernizr\modernizr.cssgradients.js" />
-    <Content Include="scripts\modernizr\modernizr.forms.js" />
-    <Content Include="scripts\modernizr\modernizr.geolocation.js" />
-    <Content Include="scripts\webshims\polyfiller.js" />
     <Content Include="styles\geolocation.css" />
     <Content Include="styles\task1.css" />
     <Content Include="styles\task1.min.css">
@@ -88,6 +83,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\webshims\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
