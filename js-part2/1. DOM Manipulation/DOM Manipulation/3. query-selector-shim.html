@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Query selector shim</title>
+</head>
+<body>
+    <div id="wrapper" style="background-color: lightblue;">
+        <div id="nav">
+            <ul class="menu">
+                <li class="menu-item">Li element 1</li>
+                <li class="menu-item">Li element 2</li>
+                <li class="menu-item">Li element 3</li>
+            </ul>
+            <div id="sample">This is sample</div>
+        </div>
+    </div>  
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script>
+        if (typeof document.querySelector != 'function') {
+            document.querySelectorAll = function (selectorString) {
+                return $(selectorString);
+            }
+
+            document.querySelector = function (selectorString) {
+                return $(selectorString)[0];
+            }
+        }
+        var listItems = document.querySelectorAll("#wrapper #nav .menu li");
+
+        for (var i = 0; i < listItems.length; i++)
+            document.write("<strong>Item #" + (i+1) + ": </strong>" + listItems[i].innerHTML + "<br/>");
+    </script>
+</body>
+</html>
