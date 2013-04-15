@@ -4,7 +4,6 @@ function createDivElements() {
     var count = 5;
     var divsFragment = document.createDocumentFragment();
 
-
     for (var i = 0; i < count; i++) {
         var div = document.createElement("div");
         div.style.position = "absolute";

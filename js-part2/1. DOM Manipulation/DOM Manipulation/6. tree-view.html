@@ -23,11 +23,11 @@
         .childrenInvisible > ul {
             display: none;
         }
-    </style>
+    </style> 
 </head>
 <body>
     <ul>
-        <li>List item
+        <li class="childrenInvisible">List item
             <ul>
                 <li>Sublist item</li>
                 <li>Sublist item</li>
@@ -46,8 +46,8 @@
                 </li>
             </ul>
         </li>
-        <li>List item</li>
-        <li>List item
+        <li class="childrenInvisible">List item</li>
+        <li class="childrenInvisible">List item
             <ul>
                 <li>Sublist item</li>
                 <li>Sublist item
@@ -58,23 +58,24 @@
                 </li>
             </ul>
         </li>
-        <li>List item</li>
-    </ul> 
-     
+        <li class="childrenInvisible">List item</li>
+    </ul>        
     <script src="scripts/jquery-1.9.1.min.js"></script>
     <script>
-        $("li").addClass('childrenInvisible');
+        window.onload = function () {
+            $("li").addClass('childrenInvisible');
 
-        $("li").click(function(e) {
-            e.stopPropagation();
+            $("li").click(function (e) {
+                e.stopPropagation();
 
-            if ($(this).hasClass('childrenVisible')) {
-                $(this).removeClass('childrenVisible').addClass('childrenInvisible');
-            }
-            else {
-                $(this).removeClass('childrenInvisible').addClass('childrenVisible');
-            }
-        });
+                if ($(this).hasClass('childrenVisible')) {
+                    $(this).removeClass('childrenVisible').addClass('childrenInvisible');
+                }
+                else {
+                    $(this).removeClass('childrenInvisible').addClass('childrenVisible');
+                }
+            });
+        }
     </script>
 </body>
 </html>
