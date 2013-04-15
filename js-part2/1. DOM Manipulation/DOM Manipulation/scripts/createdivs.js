@@ -1,33 +1,27 @@
-﻿window.onload = createDivElements;
-
-function createDivElements() {
-    var count = 5;
+﻿function createDivElements() {
+    var count = parseInt(document.getElementById("quantity").value);
     var divsFragment = document.createDocumentFragment();
 
     for (var i = 0; i < count; i++) {
         var div = document.createElement("div");
         div.style.position = "absolute";
-        div.style.top = randomBetween(0, screen.height);
-        div.style.left = randomBetween(0, screen.width - 20);
-        div.style.width = randomBetween(20, 100);
-        div.style.height = randomBetween(20, 100);
+        div.style.top = randomBetween(0, screen.height - 100) + 'px';
+        div.style.left = randomBetween(0, screen.width - 100) + 'px';
+        div.style.width = randomBetween(20, 100) + 'px';
+        div.style.height = randomBetween(20, 100) + 'px';
         div.style.backgroundColor = getRandomColor();
         div.style.color = getRandomColor();
-        div.style.borderRadius = randomBetween(1, 15);
-        div.style.borderWidth = randomBetween(1, 20);
-        div.style.borderColor = getRandomColor();
+        div.style.borderRadius = randomBetween(1, 15) + 'px';
+        div.style.borderWidth = randomBetween(1, 20) + 'px';
+        div.style.border = randomBetween(1, 10) + "px solid " + getRandomColor();
+        div.style.textAlign = "center";
         var strong = document.createElement("strong");
         strong.innerText = "div";
         div.appendChild(strong);
-        document.body.appendChild(div);
+        divsFragment.appendChild(div);
     }
-}
 
-function removePreviousDivs() {
-    var divs = document.body.getElementsByTagName("div");
-
-    for (var i = 0; i < divs.length; i++)
-        document.body.removeChild(divs[i]);
+    document.body.appendChild(divsFragment);
 }
 
 function getRandomColor() {
