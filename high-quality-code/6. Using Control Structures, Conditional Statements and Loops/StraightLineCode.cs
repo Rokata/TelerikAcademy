@@ -1,32 +1,32 @@
 public class Chef
 {
-	public void Cook()
+    public void Cook()
     {
-		Bowl bowl = GetBowl(); 
+	Bowl bowl = GetBowl(); 
 		
         Potato potato = GetPotato();
-		Peel(potato);
-		Cut(potato);            
+	Peel(potato);
+	Cut(potato);            
         bowl.Add(potato);
 		
         Carrot carrot = GetCarrot();
-		Peel(carrot);
-		Cut(carrot);
+	Peel(carrot);
+	Cut(carrot);
         bowl.Add(carrot);      
     }
-	private Bowl GetBowl()
+    private Bowl GetBowl()
     {   
         //... 
     }
-	private Potato GetPotato()
+    private Potato GetPotato()
     {
         //...
     }
-	private Carrot GetCarrot()
+    private Carrot GetCarrot()
     {
         //...
     }
-	private void Peel(Vegetable potato)
+    private void Peel(Vegetable potato)
     {
         //...
     }  	
