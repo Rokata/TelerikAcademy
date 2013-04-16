@@ -6,8 +6,8 @@ for (int i = 0; i < 100; i++)
 	
    if (i % 10 == 0 && array[i] == expectedValue)
    {
-	 isExpectedValue = true;
-   	 break;
+     isExpectedValue = true;
+     break;
    }
 }
 // More code here
