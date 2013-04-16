@@ -1,12 +1,24 @@
 public class Size
 {
-  public double Width; 
-  public double Height;
+  private double width; 
+  private double height;
   
   public Size(double width, double height)
   {
-    this.Width = width;
-    this.Height = height;
+    this.width = width;
+    this.height = height;
+  }
+  
+  public double Width 
+  {
+	get { return width; }
+	set { width = value; }
+  }
+  
+  public double Height 
+  {
+	get { return height; }
+	set { height = value; }
   }
 }
 
@@ -16,8 +28,8 @@ public static Size GetRotatedSize(Size oldSize, double angleOfTheFigureRotated)
   double angleCosAbs = Math.Abs(angleCos);
   double angleSin = Math.Sin(angleOfTheFigureRotated);
   double angleSinAbs = Math.Sin(angleSin);
-  double width = angleCosAbs * oldSize.width + angleSinAbs * oldSize.height;
-  double height = angleSinAbs * oldSize.width + angleCosAbs * oldSize.height;
+  double width = angleCosAbs * oldSize.Width + angleSinAbs * oldSize.Height;
+  double height = angleSinAbs * oldSize.Width + angleCosAbs * oldSize.Height;
   Size rotatedSize = new Size(width, height);
 	
   return rotatedSize;
