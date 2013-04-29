@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathOperationsTest", "MathOperationsTest\MathOperationsTest.csproj", "{E36B1128-5B86-43C0-834A-62C22662B7B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. MathOperationsTest", "MathOperationsTest\2. MathOperationsTest.csproj", "{E36B1128-5B86-43C0-834A-62C22662B7B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. AdvancedMathTests", "AdvancedMathTests\3. AdvancedMathTests.csproj", "{C4FF941A-5707-4004-B70F-0B3880C387FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. SortingTests", "SortingTests\4. SortingTests.csproj", "{D7B64C83-C448-45A7-914F-EE500BD888BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{E36B1128-5B86-43C0-834A-62C22662B7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E36B1128-5B86-43C0-834A-62C22662B7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E36B1128-5B86-43C0-834A-62C22662B7B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4FF941A-5707-4004-B70F-0B3880C387FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4FF941A-5707-4004-B70F-0B3880C387FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4FF941A-5707-4004-B70F-0B3880C387FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4FF941A-5707-4004-B70F-0B3880C387FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7B64C83-C448-45A7-914F-EE500BD888BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B64C83-C448-45A7-914F-EE500BD888BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B64C83-C448-45A7-914F-EE500BD888BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B64C83-C448-45A7-914F-EE500BD888BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

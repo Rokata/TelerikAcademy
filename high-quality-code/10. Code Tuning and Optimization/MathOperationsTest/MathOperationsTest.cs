@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace MathOperationsTest
 {
-    class Program
+    class MathOperationsTest
     {
         static void Main()
         {
