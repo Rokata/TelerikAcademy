@@ -54,7 +54,7 @@ domModule.addHandler("a.button", "mouseover", function () { alert("You hovered!"
 domModule.removeChild("ul", "li:first-child");
 
 var li = document.createElement("li");
-li.innerText = "new li";
+li.innerHTML = "new li";
 
 domModule.appendChild(li, "ul");
 domModule.appendChild(li, "ul.first");
