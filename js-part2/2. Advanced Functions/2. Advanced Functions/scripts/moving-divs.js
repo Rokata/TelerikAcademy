@@ -13,7 +13,7 @@
     var maxLeft = initialLeftForRectangular + rectangleWidth;
     var maxTop = initialTopForRectangular + rectangleHeight;
 
-    var rotationTimer = setInterval(function () {
+    var timer = setInterval(function () {
         for (var i = 0; i < rotatingDivs.length; i++) {
             changeRotatingDivPosition(rotatingDivs[i]);
         }
