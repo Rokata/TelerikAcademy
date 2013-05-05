@@ -56,9 +56,9 @@
     <Compile Include="SchoolTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\School\School.csproj">
-      <Project>{10fef43b-4eed-4039-9324-b96bc5d7c915}</Project>
-      <Name>School</Name>
+    <ProjectReference Include="..\SchoolLib\SchoolLib.csproj">
+      <Project>{004bdbb2-d43b-47ba-8f2e-1bea7fe824d3}</Project>
+      <Name>SchoolLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
