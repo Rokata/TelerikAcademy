@@ -86,7 +86,7 @@ namespace Task3
 
         static int ReadInput()
         {
-            return 6;
+            return 7;
             Console.WriteLine("Enter a positive number ");
             string input = Console.ReadLine();
             int n = 0;
@@ -106,14 +106,14 @@ namespace Task3
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    Console.Write("{0,3}", matrix[i, j]);
+                    Console.Write("{0,4}", matrix[i, j]);
                 }
 
                 Console.WriteLine();
             }
         }
 
-        static void GenerateMatrix(int[,] matrix, ref int k, ref Coords currentPosition, ref Coords direction)
+        static void GenerateMatrix(int[,] matrix, ref int value, ref Coords currentPosition, ref Coords direction)
         {
             int n = matrix.GetLength(0);
             int i = currentPosition.X;
@@ -122,21 +122,25 @@ namespace Task3
             int dy = direction.Y;
 
             while (true)
-            { //malko e kofti tova uslovie, no break-a raboti 100% : )
-                matrix[i, j] = k;
-                if (!HasAvailablePositions(matrix, i, j)) { break; }// prekusvame ako sme se zadunili
+            {   
+                matrix[i, j] = value;
 
-                if (i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0)
+                if (!HasAvailablePositions(matrix, i, j))
                 {
-                    while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
-                    {
-                        ChangeDirection(ref dx, ref dy);
-                    }
+                    break;
+                }
+
+                bool outsideBoundsX = (i + dx >= n || i + dx < 0);
+                bool outsideBoundsY = (j + dy >= n || j + dy < 0);
+
+                while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
+                {
+                    ChangeDirection(ref dx, ref dy);
                 }
 
                 i += dx;
                 j += dy;
-                k++;
+                value++;
             }
         }
 
@@ -144,25 +148,27 @@ namespace Task3
         {
             int n = ReadInput();
             int[,] matrix = new int[n, n];
-            Coords startCoords = new Coords(); 
+            Coords startCoords = new Coords();
             Coords startDirection = new Coords();
             startCoords.X = 0;
             startCoords.Y = 0;
             startDirection.X = 1;
             startDirection.Y = 1;
 
-            int startValue = 1;
+            int value = 1;
 
-            GenerateMatrix(matrix, ref startValue, ref startCoords, ref startDirection);
+            GenerateMatrix(matrix, ref value, ref startCoords, ref startDirection);
 
             FindCell(matrix, ref startCoords);
 
+            value++;
+
             if (startCoords.X != 0 && startCoords.Y != 0)
-            { // taka go napravih, zashtoto funkciqta ne mi davashe da ne si definiram out parametrite
+            {
                 startDirection.X = 1;
                 startDirection.Y = 1;
 
-                GenerateMatrix(matrix, ref startValue, ref startCoords, ref startDirection);
+                GenerateMatrix(matrix, ref value, ref startCoords, ref startDirection);
             }
 
             PrintMatrix(matrix);
