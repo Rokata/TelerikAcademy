@@ -6,12 +6,20 @@ namespace SchoolHierarchy
     {
         private string name;
         private int uniqueID;
-        public static int NextID = 10000;
+        private static int nextID = 10000;
 
         public Student(string name)
         {
+            if (nextID > 99999)
+                throw new ArgumentException("All available IDs were already used.");
+
             this.Name = name;
-            this.UniqueID = NextID++;
+            this.uniqueID = nextID++;
+        }
+
+        public static int NextID
+        {
+            get { return nextID; }
         }
 
         public string Name
@@ -29,13 +37,6 @@ namespace SchoolHierarchy
         public int UniqueID
         {
             get { return this.uniqueID; }
-            set
-            {
-                if (value < 10000 || value > 99999)
-                    throw new ArgumentException("ID must be between 10000 and 99999!");
-
-                this.uniqueID = value;
-            }
         }
     }
 }

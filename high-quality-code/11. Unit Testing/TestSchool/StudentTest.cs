@@ -21,21 +21,5 @@ namespace TestSchool
         {
             Student stud = new Student(null);
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Student ID too big")]
-        public void StudentID_ThrowsExceptionWhenIDTooBig()
-        {
-            Student stud = new Student("Pesho");
-            stud.UniqueID = 1000000;
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Student ID too small")]
-        public void StudentID_ThrowsExceptionWhenIDTooSmall()
-        {
-            Student stud = new Student("Pesho");
-            stud.UniqueID = 1000;
-        }
     }
 }
