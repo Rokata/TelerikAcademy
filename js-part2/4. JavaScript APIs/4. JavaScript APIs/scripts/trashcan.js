@@ -24,6 +24,7 @@ function generateTrashItems() {
         trashItem.style.position = "absolute";
         trashItem.className = "trash-item";
         trashItem.draggable = true;
+        trashItem.ondragstart = drag;
 
         if (trashItem.addEventListener) {
             trashItem.addEventListener("dragstart", drag, false);
