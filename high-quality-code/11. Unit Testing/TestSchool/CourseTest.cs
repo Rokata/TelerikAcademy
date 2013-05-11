@@ -84,11 +84,11 @@ namespace TestSchool
             course.AddNewStudent(new Student("Ivan"));
             course.AddNewStudent(new Student("Garo"));
 
-            bool isFound = course.HasStudent("Ivan");
-            bool notFound = !course.HasStudent("Ivannn");
+            bool isFound = course.HasStudent(Student.NextID - 2);
+            bool notFound = !course.HasStudent(Student.NextID - 4);
 
-            Assert.AreEqual(isFound, true);
-            Assert.AreEqual(notFound, true);
+            Assert.AreEqual(true, isFound);
+            Assert.AreEqual(true, notFound);
         }
     }
 }

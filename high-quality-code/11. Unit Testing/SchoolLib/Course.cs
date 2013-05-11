@@ -32,11 +32,11 @@ namespace SchoolHierarchy
             }
         }
 
-        public bool HasStudent(string name)
+        public bool HasStudent(int id)
         {
             foreach (var student in this.students)
             {
-                if (student.Name == name) return true;
+                if (student.UniqueID == id) return true;
             }
 
             return false;
@@ -47,7 +47,7 @@ namespace SchoolHierarchy
             if (student == null)
                 throw new ArgumentException("Value should not be null!");
 
-            if (this.students.Count == MaxStudentCount || this.HasStudent(student.Name))
+            if (this.students.Count == MaxStudentCount || this.HasStudent(student.UniqueID))
                 throw new InvalidOperationException("Max students count reached or student already enrolled!");
 
             this.students.Add(student);
