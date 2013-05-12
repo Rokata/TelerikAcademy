@@ -22,17 +22,9 @@ function generateTrashItems() {
         var trashItem = new Image(trashHeight, trashWidth);
         trashItem.src = "images/junk.png";
         trashItem.style.position = "absolute";
-        trashItem.className = "trash-item";
+        trashItem.id = "img" + (i + 1);
         trashItem.draggable = true;
         trashItem.ondragstart = drag;
-
-        if (trashItem.addEventListener) {
-            trashItem.addEventListener("dragstart", drag, false);
-        }
-        else {
-            trashItem.attachEvent("ondragstart", drag);
-        }
-
         trashItem.style.top = getRandomPosition(0, screenHeight) + 'px';
         trashItem.style.left = getRandomPosition(trashcanWidth, screenWidth - trashWidth) + 'px';
         fragment.appendChild(trashItem);

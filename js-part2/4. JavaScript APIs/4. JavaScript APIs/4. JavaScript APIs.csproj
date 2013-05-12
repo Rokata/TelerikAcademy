@@ -58,10 +58,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1. trashcan.html" />
+    <Content Include="3. storage-shim.html" />
+    <Content Include="4. canvas-figures.html" />
+    <Content Include="scripts\canvas-figures.js" />
     <Content Include="images\junk.png" />
     <Content Include="images\trashcan_closed.jpg" />
     <Content Include="images\trashcan_opened.jpg" />
+    <Content Include="5. bouncing-ball.html" />
+    <Content Include="scripts\bouncing-ball.js" />
     <Content Include="scripts\trashcan.js" />
+    <Content Include="scripts\storage-shim.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
