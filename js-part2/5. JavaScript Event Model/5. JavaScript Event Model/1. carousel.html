@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JS Carousel</title>
+    <style>
+        #current-image {
+           position: relative;
+           margin-left: 20px;
+           width: 860px;
+           height: 538px;
+           padding-left: 100px;
+           padding-right: 100px;
+        }
+
+        #arrow-back, #arrow-next {
+            position: absolute;
+            top: 100px;
+        }
+
+        #arrow-back { 
+            left: 10px;
+        }
+
+        #arrow-next {
+            right: 10px;
+        }
+    </style>
+    <script src="scripts/carousel.js"></script>
+</head>
+<body>
+    <div id="current-image">
+        <img src="images/arrow-back.png" id="arrow-back" />
+        <img src="images/arrow-next.png" id="arrow-next" />
+        <img src="images/img1.jpg" width="860" height="538" id="current" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO</title>
+    <style>
+        body, input[type=text], button {
+            font: 14px 'Segoe UI';
+        }
+
+        button {
+            text-decoration: none;
+            border: 0;
+            padding: 5px 10px 5px 10px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #99C319;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="addItem" />
+    <button id="add-btn" onclick="addItem()">Add new</button>
+    <button id="remove-btn" onclick="removeItems()">Remove selected</button>
+    <button id="hide-btn" onclick="hideSelected()">Hide selected</button>
+    <button id="show-btn" onclick="show()">Show hidden</button>
+    <h3>TODO list: </h3>
+    <ul id="todo"></ul>
+    <script src="scripts/todo.js"></script>
+</body>
+</html>
