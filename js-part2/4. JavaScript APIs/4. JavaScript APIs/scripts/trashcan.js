@@ -1,6 +1,6 @@
 ﻿var trashcan = document.getElementById("trashcan");
 var trashes = 5;
-var startTime = new Date().getSeconds();
+var startTime = new Date().getTime();
 generateTrashItems();
 viewScores();
 
@@ -48,11 +48,11 @@ function drop(ev) {
 }
 
 function enterScore() {
-    var endTime = new Date().getSeconds();
-    var time = endTime - startTime;
+    var endTime = new Date().getTime();
+    var time = (endTime - startTime) / 1000;
     var nick = prompt("You completed the game in " + time + " seconds.\n\nEnter your nickname: ");
 
-    var previousTime = localStorage.getItem(nick) | 0;
+    var previousTime = parseFloat(localStorage.getItem(nick));
 
     if (isNaN(previousTime)) {
         localStorage.setItem(nick, time);
@@ -67,7 +67,7 @@ function viewScores() {
     var highscores = [];
 
     for (var name in localStorage) {
-        highscores.push({ nick: name, time: localStorage[name] | 0 });
+        highscores.push({ nick: name, time: parseFloat(localStorage[name])});
     }
     sortScores(highscores);
 

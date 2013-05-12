@@ -57,7 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1 and 2. trashcan.html" />
+    <Content Include="1. 2. trashcan.html" />
     <Content Include="3. storage-shim.html" />
     <Content Include="4. canvas-figures.html" />
     <Content Include="scripts\canvas-figures.js" />
