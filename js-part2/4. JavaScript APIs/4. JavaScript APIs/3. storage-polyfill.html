@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Storage shim</title>
+</head>
+<body>
+    <script src="scripts/storage-polyfill.js"></script>
+    <script>
+        localStorage.setItem("example", "sample data");
+        localStorage.setItem("example 2", "more sample data");
+        localStorage.removeItem("example");
+        document.write(localStorage.getItem("example")); // null
+        document.write("<br/>" + localStorage.getItem("example 2"));
+    </script>
+</body>
+</html>
