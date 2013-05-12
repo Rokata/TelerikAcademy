@@ -14,6 +14,9 @@ namespace MatrixWalk
 
         public Matrix(int size)
         {
+            if (size <= 0 || size > 100)
+                throw new ArgumentException("Invalid size value for the matrix.");
+
             this.matrix = new int[size, size];
             this.size = size;
             this.currentX = 0;
@@ -146,35 +149,17 @@ namespace MatrixWalk
             return (outsideBoundsX || outsideBoundsY || matrix[currentX + directionX, currentY + directionY] != 0);
         }
 
-        public override string ToString()
+        public void PrintMatrix()
         {
-            StringBuilder result = new StringBuilder();
-
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    result.AppendFormat("{0,4} ", matrix[i, j]);
+                    Console.Write("{0,4}", matrix[i, j]);
                 }
-                result.Remove(result.Length - 1, 1);
-                result.Append("\n");
+
+                Console.WriteLine();
             }
-
-            return result.ToString();
-        }
-
-        public void PrintMatrix()
-        {
-            Console.WriteLine(this.ToString());
-            //for (int i = 0; i < size; i++)
-            //{
-            //    for (int j = 0; j < size; j++)
-            //    {
-            //        Console.Write("{0,4}", matrix[i, j]);
-            //    }
-
-            //    Console.WriteLine();
-            //}
         }
     }
 }
