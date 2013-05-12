@@ -3,6 +3,10 @@
 <head>
     <title>Trashcan</title>
     <style>
+        body {
+            font: 14px 'Segoe UI';
+        }
+
         img#trashcan {
             position: absolute;
             top: 10px;
@@ -16,6 +20,8 @@
 </head>
 <body>
     <div id="drag-area" style="position: relative; width: 1200px; height: 250px;"></div>
+    <h2>Highscores:</h2>
+    <table id="highscores"></table>
     <img id="trashcan" src="images/trashcan_closed.jpg" width="149" height="200" ondrop="drop(event)" ondragover="allowDrop(event)"/>
     <script src="scripts/trashcan.js"></script>
 </body>
