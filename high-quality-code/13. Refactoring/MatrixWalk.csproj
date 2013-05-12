@@ -37,7 +37,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coords.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="MatrixWalk.cs" />
   </ItemGroup>
