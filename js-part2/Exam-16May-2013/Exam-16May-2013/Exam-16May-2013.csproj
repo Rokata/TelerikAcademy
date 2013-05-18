@@ -60,7 +60,7 @@
     <Content Include="sample.html" />
     <Content Include="scripts\gallery.js" />
     <Content Include="scripts\local-storage-extensions.js" />
-    <Content Include="scripts\serializer.js" />
+    <Content Include="scripts\gallery-repository.js" />
     <Content Include="styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>

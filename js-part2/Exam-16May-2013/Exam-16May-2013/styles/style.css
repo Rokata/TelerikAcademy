@@ -23,10 +23,17 @@ li.album-pic h4 {
 
 div {
     border: 2px solid black;
+    margin-bottom: 15px;
 }
 
     div.albums-holder {
         border: none;
+    }
+    
+    div#zoomed-img-area {
+        position: absolute;
+        top: 0;
+        right: 10px;
     }
 
 h4 {

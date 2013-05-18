@@ -6,7 +6,9 @@
 </head>
 <body>
     <div id="image-gallery-holder"></div>
-    <script src="local-storage-extensions.js"></script>
+    <div id="zoomed-img-area"></div>
+    <script src="scripts/local-storage-extensions.js"></script>
+    <script src="scripts/gallery-repository.js"></script>
     <script src="scripts/gallery.js"></script>
     <script>
         /* without nesting (task 1) */
@@ -16,16 +18,30 @@
         gallery.addImage("JS Ninja", "images/js-ninja.png");
         gallery.addImage("JS Ninja", "images/js-ninja.png");
 
-        var ninjasAlbum = gallery.addAlbum("Ninjas");
+        var ninjasAlbum = gallery.addAlbum("Ninjas").addAlbum("test1").addAlbum("test12e23");
+        ninjasAlbum.addImage("JS Ninja<br/>", "images/js-ninja.png");
         ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
         ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
-        ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        ninjasAlbum.addAlbum("empty");
 
         /* with nesting (task 2) */
 
         var kidsAlbum = ninjasAlbum.addAlbum("Kids Ninjas");
         kidsAlbum.addImage("Kid Ninja", "images/js-ninja.png");
         kidsAlbum.addImage("Kid Ninja", "images/js-ninja.png");
+
+        /* task 3 - no tests needed */
+
+        /* tasks 4 & 5 (check local storage after that) */
+        var galleryData = gallery.getImageGalleryData();
+        imageGalleryRepository.save("ninjas-gallery", galleryData);
+
+        /* task 6 [all other code here must be commendted and repository.save() 
+        must be called before that] */
+        var copyGalleryData = imageGalleryRepository.load("ninjas-gallery");
+        var copyGallery = controls.buildImageGallery("#image-gallery-holder", copyGalleryData);
+
+        /* task 7 - zoomed in top-right corner */
     </script>
 </body>
 </html>
