@@ -141,11 +141,7 @@ namespace Problem04_Free_Content
         {
             StringBuilder result = new StringBuilder();
             result.AppendFormat("{0} ", this.Name);
-
-            foreach (string param in this.Parameters)
-            {
-                result.AppendFormat("{0} ", param);
-            }
+            result.Append(string.Join(" ", this.Parameters));
 
             return result.ToString();
         }
