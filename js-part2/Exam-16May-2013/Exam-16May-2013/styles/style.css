@@ -48,16 +48,16 @@ h4:hover {
         padding: 30px;
     }
 
-#image-gallery-holder div {
+#image-gallery-holder div, #copy-gallery div {
     border-radius: 5px;
     padding: 15px 20px 15px 20px;
 }
 
-#image-gallery-holder > div ul {
+#image-gallery-holder > div ul, #copy-gallery  > div ul {
     margin-top: 15px;
 }
 
-#image-gallery-holder {
+#image-gallery-holder, #copy-gallery  {
     margin: auto;
     padding: 20px 50px 20px 50px;
     //width: 800px;

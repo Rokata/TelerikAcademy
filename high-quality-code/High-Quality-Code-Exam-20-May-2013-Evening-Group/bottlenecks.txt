@@ -1,0 +1,11 @@
+A possible bottleneck is the following link in the ChangePhone method: 
+
+var oldNumberEntries = this.phonesDictionary[oldNumber].ToList(); 
+
+If the method is called many times (thousands) and if oldNumber always exists 
+the application will become really slow as the ToList() operation is slow.
+Furthermore, there might be many phone entries corresponding  to the 
+oldNumber parameter.
+Since it is necessary to make a change everywhere oldNumber appears 
+(in all the corresponding entries), we might need all the entries so 
+the change is difficult. 

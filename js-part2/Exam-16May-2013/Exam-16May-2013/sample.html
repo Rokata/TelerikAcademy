@@ -6,6 +6,7 @@
 </head>
 <body>
     <div id="image-gallery-holder"></div>
+	<div id="copy-gallery"></div>
     <div id="zoomed-img-area"></div>
     <script src="scripts/local-storage-extensions.js"></script>
     <script src="scripts/gallery-repository.js"></script>
@@ -39,7 +40,7 @@
         /* task 6 [all other code here must be commendted and repository.save() 
         must be called before that] */
         var copyGalleryData = imageGalleryRepository.load("ninjas-gallery");
-        var copyGallery = controls.buildImageGallery("#image-gallery-holder", copyGalleryData);
+        var copyGallery = controls.buildImageGallery("#copy-gallery", copyGalleryData);
 
         /* task 7 - zoomed in top-right corner */
     </script>
