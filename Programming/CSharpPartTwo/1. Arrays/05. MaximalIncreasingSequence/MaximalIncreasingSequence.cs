@@ -33,16 +33,6 @@ class Program
             }
         }
 
-        Console.Write("Max increasing result: ");
-
-        StringBuilder result = new StringBuilder();
-        result.Append("{");
-
-        foreach (int item in maxSequence) result.Append(item + ", ");
-
-        result.Remove(result.Length - 2, 2);
-        result.Append("}");
-
-        Console.WriteLine(result);
+        Console.WriteLine("Max increasing result: {0}", string.Join(", ", maxSequence));
     }
 }

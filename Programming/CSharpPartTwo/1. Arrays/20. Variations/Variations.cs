@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 class Variations
 {
@@ -21,10 +20,11 @@ class Variations
             foreach (int item in nums) Console.Write(item + " ");
             Console.WriteLine();
 
+            // the loop executes while there are positions with max value reached
             while (index > -1 && nums[index] == N)
             {
-                oldValue = nums[index];
-                nums[index] = 1;
+                oldValue = nums[index]; // old value needed to check whether all positions contain max value
+                nums[index] = 1; // resets the value corresponding to the index as max value is reached
                 --index; 
             }
 

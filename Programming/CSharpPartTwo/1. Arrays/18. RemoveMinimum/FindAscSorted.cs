@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 class FindAscSorted
 {
@@ -24,19 +23,28 @@ class FindAscSorted
 
     static void CheckAscendingSorted(int[] vector)
     {
-        int[] copyVector = (int[]) vector.Clone();
-        Array.Reverse(copyVector);
+        // vector contains indexes of left elements - the other indexes are those of the removed elements
+        int[] copyVector = (int[]) vector.Clone(); // clone because of reverse
+        Array.Reverse(copyVector); 
 
+        // check if resulting array is ascending sorted
         for (int i = 1; i < copyVector.Length; i++)
         {
             if (numbers[copyVector[i]] < numbers[copyVector[i - 1]]) return;
         }
 
+        /* check if this is the best score - the minimum count of elements for removal
+         * if so store the members of this combination 
+         * */
         if (elementsRemoved > numbers.Length - copyVector.Length)
         {
-            if (result.Count > 0) result.Clear();
+            if (result.Count > 0) 
+                result.Clear();
+            
             elementsRemoved = numbers.Length - copyVector.Length;
-            foreach (int item in copyVector) result.Add(numbers[item]);
+
+            foreach (int item in copyVector) 
+                result.Add(numbers[item]);
         }
     }
 

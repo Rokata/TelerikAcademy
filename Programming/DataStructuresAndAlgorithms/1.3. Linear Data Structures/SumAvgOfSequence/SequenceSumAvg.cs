@@ -10,11 +10,10 @@ namespace SumAvgOfSequence
         {
             List<uint> sequence = new List<uint>();
 
-            for (string input = Console.ReadLine(); input != ""; )
+            for (string input = Console.ReadLine(); input != ""; input = Console.ReadLine())
             {
                 uint number = uint.Parse(input);
                 sequence.Add(number);
-                input = Console.ReadLine();
             }
 
             return sequence;

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 class Program
 {
@@ -15,9 +11,9 @@ class Program
             result = new int[second.Length];
             for (int i = 0; i < second.Length; i++)
             {
-                if (i >= first.Length)
+                if (i >= first.Length) // all coefficents from the smaller array are added
                 {
-                    result[i] = second[i];
+                    result[i] = second[i]; // if there is no corresponding power add that of the bigger polynomal
                     continue;
                 }
                 result[i] = first[i] + second[i];
