@@ -205,7 +205,7 @@ namespace TreeDataStructure
                 yield return node;
         }
 
-        public void GetNextNode(TreeNode<T> node, ref List<TreeNode<T>> nodes)
+        private void GetNextNode(TreeNode<T> node, ref List<TreeNode<T>> nodes)
         {
             if (node == null) return;
 
