@@ -19,6 +19,8 @@ namespace PublishEvents
                 pub.ShowDigitValue();
                 now = DateTime.Now;
             }
+
+            sub1.Unregister(pub);
         }
     }
 }

@@ -16,5 +16,10 @@ namespace PublishEvents
         {
             Console.WriteLine(name + " received message: {0}", e.Message);
         }
+
+        public void Unregister(Publisher pub)
+        {
+            pub.CustomEvent -= HandleCustomEvent;
+        }
     }
 }
